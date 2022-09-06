@@ -23,8 +23,17 @@ export default function Grid() {
   return (
     <>
       <Topbar />
-
-      <div>Grid</div>
+      <ul className='grid'>
+        {grid.map((tile: any, index: number) => {
+          return (
+            <li key={index}>
+              <div className='tile'>
+                {tile}
+              </div>
+            </li>
+          )
+        })}
+      </ul>
     </>
   )
 }
