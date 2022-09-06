@@ -3,7 +3,7 @@ import type { RootState } from "../../store";
 
 interface PlayersState { value: number };
 
-const initialState: PlayersState = { value: 0 }
+const initialState: PlayersState = { value: 1 }
 
 export const playersSlice = createSlice({
   name: 'players',
