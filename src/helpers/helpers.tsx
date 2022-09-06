@@ -4,15 +4,15 @@
  * @returns array
  */
 export default function generateNumberGrid(gridSize: number) {
-  const output: number[] = [];
+  const numbers: number[] = [];
 
   for (let x = 0; x < gridSize / 2; x++) {
     for (let y = 0; y < 2; y++) {
-      output.push(x);
+      numbers.push(x);
     }
   }
 
-  output.sort();
+  const output = numbers.sort(() => Math.random() - 0.5);
 
   return output;
 }
