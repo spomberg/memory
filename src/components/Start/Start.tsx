@@ -2,14 +2,14 @@ import './Start.scss';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { setIconsTheme, setNumbersTheme } from '../../features/theme/themeSlice';
 import { setPlayers } from '../../features/players/playersSlice';
-import { setGrid } from '../../features/grid/gridSlice';
+import { setGridSize } from '../../features/gridSize/gridSizeSlice';
 import { startGame } from '../../features/state/stateSlice';
 
 export default function Start() {
   const dispatch = useAppDispatch();
   const theme = useAppSelector((state) => state.theme.value);
   const players = useAppSelector((state) => state.players.value);
-  const grid = useAppSelector((state) => state.grid.value);
+  const gridSize = useAppSelector((state) => state.gridSize.value);
 
   return (
     <div className='start'>
@@ -65,14 +65,14 @@ export default function Start() {
           <span>Grid Size</span>
           <div className='buttons-line'>
             <button
-              {...grid === 16 && {className: 'selected'}}
-              onClick={() => dispatch(setGrid(16))}
+              {...gridSize === 16 && {className: 'selected'}}
+              onClick={() => dispatch(setGridSize(16))}
             >
               4x4
             </button> 
             <button
-              {...grid === 36 && {className: 'selected'}}
-              onClick={() => dispatch(setGrid(36))}
+              {...gridSize === 36 && {className: 'selected'}}
+              onClick={() => dispatch(setGridSize(36))}
             >
               6x6
             </button>
