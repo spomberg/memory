@@ -3,7 +3,7 @@ import type { RootState } from "../../store";
 
 interface gridState { value: number };
 
-const initialState: gridState = { value: 0 }
+const initialState: gridState = { value: 16 }
 
 export const gridSlice = createSlice({
   name: 'grid',
