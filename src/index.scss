@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'AtkinsonHyperlegible';
+  src: local('AtkinsonHyperLegible-Bold'),
+    url('./assets/fonts/AtkinsonHyperlegible-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+body {
+  font-family: 'AtkinsonHyperlegible';
+}
