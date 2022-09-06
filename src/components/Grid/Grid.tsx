@@ -1,7 +1,12 @@
 import './Grid.scss';
+import Topbar from '../Topbar/Topbar';
 
 export default function Grid() {
   return (
-    <div>Grid</div>
+    <>
+      <Topbar />
+
+      <div>Grid</div>
+    </>
   )
 }
