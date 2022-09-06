@@ -2,12 +2,14 @@ import { configureStore } from "@reduxjs/toolkit";
 import stateReducer from "./features/state/stateSlice";
 import themeReducer from "./features/theme/themeSlice";
 import playersReducer from "./features/players/playersSlice";
+import gridReducer from "./features/grid/gridSlice";
 
 export const store = configureStore({
   reducer : {
     state: stateReducer,
     theme: themeReducer,
-    players: playersReducer
+    players: playersReducer,
+    grid: gridReducer
   }
 });
 
