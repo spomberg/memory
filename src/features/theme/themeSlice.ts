@@ -3,7 +3,7 @@ import type { RootState } from "../../store";
 
 interface themeState { value: string };
 
-const initialState: themeState = { value: '' }
+const initialState: themeState = { value: 'numbers' }
 
 export const themeSlice = createSlice({
   name: 'theme',
