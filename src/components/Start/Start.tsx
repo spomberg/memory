@@ -1,6 +1,16 @@
 import './Start.scss';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import { setIconsTheme, setNumbersTheme } from '../../features/theme/themeSlice';
+import { setPlayers } from '../../features/players/playersSlice';
+import { setGrid } from '../../features/grid/gridSlice';
+import { startGame } from '../../features/state/stateSlice';
 
 export default function Start() {
+  const dispatch = useAppDispatch();
+  const theme = useAppSelector((state) => state.theme.value);
+  const players = useAppSelector((state) => state.players.value);
+  const grid = useAppSelector((state) => state.grid.value);
+
   return (
     <div className='start'>
       <h1>memory</h1>
@@ -8,27 +18,72 @@ export default function Start() {
         <div>
           <span>Select Theme</span>
           <div className='buttons-line'>
-            <button>Numbers</button> 
-            <button>Icons</button>
+            <button
+              {...theme === 'numbers' && {className: 'selected'}}
+              onClick={() => dispatch(setNumbersTheme())}
+            >
+              Numbers
+            </button> 
+            <button
+              {...theme === 'icons' && {className: 'selected'}}
+              onClick={() => dispatch(setIconsTheme())}
+            >
+              Icons
+            </button>
           </div>
         </div>
         <div>
           <span>Number of Players</span>
           <div className='buttons-line'>
-            <button>1</button> 
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
+            <button
+              {...players === 1 && {className: 'selected'}}
+              onClick={() => dispatch(setPlayers(1))}
+            >
+              1
+            </button> 
+            <button
+              {...players === 2 && {className: 'selected'}}
+              onClick={() => dispatch(setPlayers(2))}
+            >
+              2
+            </button>
+            <button
+              {...players === 3 && {className: 'selected'}}
+              onClick={() => dispatch(setPlayers(3))}
+            >
+              3
+            </button>
+            <button
+              {...players === 4 && {className: 'selected'}}
+              onClick={() => dispatch(setPlayers(4))}
+            >
+              4
+            </button>
           </div>
         </div>
         <div>
           <span>Grid Size</span>
           <div className='buttons-line'>
-            <button>4x4</button> 
-            <button>6x6</button>
+            <button
+              {...grid === 16 && {className: 'selected'}}
+              onClick={() => dispatch(setGrid(16))}
+            >
+              4x4
+            </button> 
+            <button
+              {...grid === 36 && {className: 'selected'}}
+              onClick={() => dispatch(setGrid(36))}
+            >
+              6x6
+            </button>
           </div>
         </div>
-        <button className='start-button'>Start Game</button>
+        <button 
+          className='start-button'
+          onClick={() => dispatch(startGame())}
+        >
+          Start Game
+        </button>
       </div>
     </div>
   )
