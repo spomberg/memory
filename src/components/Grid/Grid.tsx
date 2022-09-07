@@ -3,6 +3,7 @@ import Topbar from '../Topbar/Topbar';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { setGrid } from '../../features/grid/gridSlice';
 import { addMatchedTiles } from '../../features/matched/matchedSlice';
+import { addPlay, resetPlay } from '../../features/play/playSlice';
 import { useEffect } from 'react';
 import { generateNumberGrid, generateIconGrid } from '../../helpers/helpers';
 import { ReactSVG } from 'react-svg';
@@ -13,6 +14,7 @@ export default function Grid() {
   const theme = useAppSelector((state) => state.theme.value);
   const grid = useAppSelector((state) => state.grid.value);
   const matched = useAppSelector((state) => state.matched.value);
+  const play = useAppSelector((state) => state.play.value);
 
   useEffect(() => {
     switch (theme) {
