@@ -3,7 +3,7 @@ import Topbar from '../Topbar/Topbar';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { setGrid } from '../../features/grid/gridSlice';
 import { useEffect } from 'react';
-import generateNumberGrid from '../../helpers/helpers';
+import { generateNumberGrid, generateIconGrid } from '../../helpers/helpers';
 
 export default function Grid() {
   const dispatch = useAppDispatch();
@@ -17,18 +17,20 @@ export default function Grid() {
       case 'numbers':
         dispatch(setGrid(generateNumberGrid(gridSize)));
         break;
+      case 'icons':
+        dispatch(setGrid(generateIconGrid(gridSize)));
     }
   }, [])
   
   return (
     <>
       <Topbar />
-      <ul className='grid'>
+      <ul className={`grid ${gridSize === 16 ? '4x4' : '6x6'}`}>
         {grid.map((tile: any, index: number) => {
           return (
             <li key={index}>
               <div className='tile'>
-                {tile}
+                <span>{tile}</span>
               </div>
             </li>
           )
