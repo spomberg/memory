@@ -4,7 +4,6 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { setGrid } from '../../features/grid/gridSlice';
 import { useEffect } from 'react';
 import { generateNumberGrid, generateIconGrid } from '../../helpers/helpers';
-import apple from '../../assets/icons/apple.svg';
 import { ReactSVG } from 'react-svg';
 
 export default function Grid() {
