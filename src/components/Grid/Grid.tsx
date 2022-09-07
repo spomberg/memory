@@ -32,7 +32,7 @@ export default function Grid() {
           return (
             <li key={index}>
               <div 
-                className='tile'
+                className={`tile ${matched.includes(index) && 'matched'}`}
                 {...matched.includes(index) && {disabled: true}}
                 >
                 {theme === 'numbers' ? <span>{tile}</span> : <ReactSVG src={tile} />}
