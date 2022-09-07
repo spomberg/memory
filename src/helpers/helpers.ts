@@ -46,15 +46,16 @@ function generateIconGrid(gridSize: number) {
     android, apple, chrome, css3, discord, github, google, html5, js, linux, microsoft, napster,
     playstation, react, reddit, safari, xbox, youtube
   ];
+  const shuffledIcons = icons.sort(() => Math.random() - 0.5); // Shuffle icons array
   let list: any[] = [];
 
   for (let x = 0; x < gridSize / 2; x++) {
     for (let y = 0; y < 2; y++) {
-      list.push(icons[x]);
+      list.push(shuffledIcons[x]);
     }
   }
 
-  const output = list.sort(() => Math.random() - 0.5);
+  const output = list.sort(() => Math.random() - 0.5); // Shuffle output array
 
   return output;
 }
