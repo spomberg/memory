@@ -2,5 +2,12 @@
   li {
     list-style: none;
     cursor: pointer;
+
+    .tile {
+      svg {
+        fill: rgb(163, 163, 158);
+      }
+    }
+
   }
 }
