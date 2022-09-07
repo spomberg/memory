@@ -1,8 +1,21 @@
-import { 
-  FaApple, FaAndroid, FaChrome, FaCss3Alt, FaDev, FaDiscord, FaGithub, 
-  FaGoogle, FaHtml5, FaJsSquare, FaMicrosoft, FaNapster, FaNpm, FaPlaystation, 
-  FaReact, FaRedditAlien, FaSafari, FaXbox
-} from 'react-icons/fa';
+import android from '../assets/icons/android.svg';
+import apple from '../assets/icons/apple.svg';
+import chrome from '../assets/icons/chrome.svg';
+import css3 from '../assets/icons/css3-alt.svg';
+import discord from '../assets/icons/discord.svg';
+import github from '../assets/icons/github.svg';
+import google from '../assets/icons/google.svg';
+import html5 from '../assets/icons/html5.svg';
+import js from '../assets/icons/js.svg';
+import linux from '../assets/icons/linux.svg';
+import microsoft from '../assets/icons/microsoft.svg';
+import napster from '../assets/icons/napster.svg';
+import playstation from '../assets/icons/playstation.svg';
+import react from '../assets/icons/react.svg';
+import reddit from '../assets/icons/reddit-alien.svg';
+import safari from '../assets/icons/safari.svg';
+import xbox from '../assets/icons/xbox.svg';
+import youtube from '../assets/icons/youtube.svg';
 
 /**
  * Creates an array of numbers based on the grid size 
@@ -30,9 +43,8 @@ function generateNumberGrid(gridSize: number) {
  */
 function generateIconGrid(gridSize: number) {
   const icons = [
-    FaApple, FaAndroid, FaChrome, FaCss3Alt, FaDev, FaDiscord, FaGithub, 
-    FaGoogle, FaHtml5, FaJsSquare, FaMicrosoft, FaNapster, FaNpm, FaPlaystation, 
-    FaReact, FaRedditAlien, FaSafari, FaXbox
+    android, apple, chrome, css3, discord, github, google, html5, js, linux, microsoft, napster,
+    playstation, react, reddit, safari, xbox, youtube
   ];
   let list: any[] = [];
 
