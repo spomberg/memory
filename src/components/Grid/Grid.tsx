@@ -14,8 +14,8 @@ export default function Grid() {
   const theme = useAppSelector((state) => state.theme.value);
   const grid = useAppSelector((state) => state.grid.value);
   const matched = useAppSelector((state) => state.matched.value);
-  const [tiles, setTiles] = useState<Array<any>>([]);
-  const [indices, setIndices] = useState<Array<any>>([]);
+  const [tiles, setTiles] = useState<Array<any>>([]); // Will hold the content of the tiles selected on each play
+  const [indices, setIndices] = useState<Array<number>>([]); // Will hold the index of the tiles selected on each play
 
   // Generates grid based on theme state
   useEffect(() => {
