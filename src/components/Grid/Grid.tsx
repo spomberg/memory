@@ -6,6 +6,8 @@ import { addMatchedTiles } from '../../features/matched/matchedSlice';
 import { useEffect, useState } from 'react';
 import { generateNumberGrid, generateIconGrid } from '../../helpers/helpers';
 import { incrementMoves } from '../../features/moves/movesSlice';
+import { nextPlayer } from '../../features/currentPlayer/currentPlayerSlice';
+import { initiateScore, incrementScore } from '../../features/score/scoreSlice';
 import { ReactSVG } from 'react-svg';
 
 export default function Grid() {
@@ -14,6 +16,8 @@ export default function Grid() {
   const theme = useAppSelector((state) => state.theme.value);
   const grid = useAppSelector((state) => state.grid.value);
   const matched = useAppSelector((state) => state.matched.value);
+  const players = useAppSelector((state) => state.players.value);
+  const currentPlayer = useAppSelector((state) => state.currentPlayer.value);
   const [tiles, setTiles] = useState<Array<any>>([]); // Will hold the content of the tiles selected on each play
   const [indices, setIndices] = useState<Array<number>>([]); // Will hold the index of the tiles selected on each play
 
@@ -26,7 +30,8 @@ export default function Grid() {
       case 'icons':
         dispatch(setGrid(generateIconGrid(gridSize)));
     }
-  }, [dispatch, gridSize, theme]);
+    dispatch(initiateScore(players));
+  }, [dispatch, gridSize, theme, players]);
 
   function handleClick(index: number, tile: any) {
     setIndices([...indices, index]); // Adds tile index number to play array
@@ -41,16 +46,19 @@ export default function Grid() {
           // Adds matched tiles to matched array
           dispatch(addMatchedTiles(indices[0]));
           dispatch(addMatchedTiles(indices[1]));
-          // Will add points later
+          // Increments score
+          dispatch(incrementScore(currentPlayer));
         }
         // Increment move counter
         dispatch(incrementMoves());
         // Reset play states
         setIndices([]);
         setTiles([]);
+        // Changes player's turn
+        dispatch(nextPlayer(players));
       }, 3000);
     }
-  }, [indices, tiles, dispatch])
+  }, [indices, tiles, dispatch, currentPlayer, players])
   
   
   return (
