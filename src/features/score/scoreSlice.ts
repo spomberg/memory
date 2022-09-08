@@ -22,7 +22,7 @@ export const scoreSlice = createSlice({
   },
 }); 
 
-export const { initiateScore, resetScore, incrementScore } = scoreSlice.actions;
+export const { initiateScore, incrementScore } = scoreSlice.actions;
 
 export const scoreMoves = (state: RootState) => state.score.value;
 
