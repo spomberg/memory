@@ -18,7 +18,6 @@ export const scoreSlice = createSlice({
 
       state.value = score;
      },
-    resetScore: (state) => { state.value = [] },
     incrementScore: (state, actions) => { state.value[actions.payload]++ }
   },
 }); 
