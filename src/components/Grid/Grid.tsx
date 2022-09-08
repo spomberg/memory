@@ -29,17 +29,18 @@ export default function Grid() {
   }, [dispatch, gridSize, theme]);
 
   function handleClick(index: number, tile: any) {
-        dispatch(addPlay(index)); // Adds tile index number to play array
+    dispatch(addPlay(index)); // Adds tile index number to play array
     setTiles([...tiles, tile]); // Adds tiles to array for comparison
   }
 
+  // Handles the play, called everytime a tile is clicked.
   useEffect(() => {
     if (play.length > 1) {
       setTimeout(() => {
         if (tiles[0] === tiles[1]) {
           // Adds matched tiles to matched array
-          addMatchedTiles(tiles[0]);
-          addMatchedTiles(tiles[1]);
+          dispatch(addMatchedTiles(play[0]));
+          dispatch(addMatchedTiles(play[1]));
           // Will add points later
         }
         // Reset play states
@@ -60,7 +61,7 @@ export default function Grid() {
               key={index}
               >
               <button 
-                className={`tile ${matched.includes(index) ? 'matched' : ''} ${play.includes(index) ? 'selected' : ''}`}
+                className={`tile ${matched.includes(index) ? 'matched' : ''}${play.includes(index) ? 'selected' : ''}`}
                 {...(matched.includes(index) || play.includes(index) || play.length > 1) && {disabled: true}}
                 onClick={() => handleClick(index, tile)}
                 >
