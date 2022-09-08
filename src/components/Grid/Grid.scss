@@ -2,11 +2,30 @@
   li {
     list-style: none;
     cursor: pointer;
+    background-color: black;
+    width: 10%;
 
+    &.selected {
+      .tile {
+        .svg {
+          visibility: visible;
+        }
+      }
+    }
+
+    &.matched {
+      background-color: white;
+      .tile {
+        .svg {
+          visibility: visible;
+        }
+      }
+    }
+    
     .tile {
       svg {
-        fill: rgb(163, 163, 158);
-        width: 5%;
+        fill: rgb(235, 235, 234);
+        visibility: hidden;
       }
     }
 
