@@ -9,8 +9,8 @@ export const currentPlayerSlice = createSlice({
   name: 'currentPlayer',
   initialState,
   reducers: {
-    nextPlayer: (state) => {
-      if (state.value <= 3) {
+    nextPlayer: (state, actions) => {
+      if (state.value < actions.payload - 1) {
         state.value++; 
       } else state.value = 0;
     }
