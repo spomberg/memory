@@ -5,7 +5,6 @@ import playersReducer from "./features/players/playersSlice";
 import gridSizeReducer from "./features/gridSize/gridSizeSlice";
 import gridReducer from "./features/grid/gridSlice";
 import matchedReducer from "./features/matched/matchedSlice";
-import playReducer from "./features/play/playSlice";
 
 export const store = configureStore({
   reducer : {
@@ -14,8 +13,7 @@ export const store = configureStore({
     players: playersReducer,
     gridSize: gridSizeReducer,
     grid: gridReducer,
-    matched: matchedReducer,
-    play: playReducer
+    matched: matchedReducer
   }
 });
 
