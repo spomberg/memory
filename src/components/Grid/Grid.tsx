@@ -5,6 +5,7 @@ import { setGrid } from '../../features/grid/gridSlice';
 import { addMatchedTiles } from '../../features/matched/matchedSlice';
 import { useEffect, useState } from 'react';
 import { generateNumberGrid, generateIconGrid } from '../../helpers/helpers';
+import { incrementMoves } from '../../features/moves/movesSlice';
 import { ReactSVG } from 'react-svg';
 
 export default function Grid() {
@@ -42,6 +43,8 @@ export default function Grid() {
           dispatch(addMatchedTiles(indices[1]));
           // Will add points later
         }
+        // Increment move counter
+        dispatch(incrementMoves());
         // Reset play states
         setIndices([]);
         setTiles([]);
