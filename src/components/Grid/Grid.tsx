@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { setGrid } from '../../features/grid/gridSlice';
 import { addMatchedTiles } from '../../features/matched/matchedSlice';
 import { addPlay, resetPlay } from '../../features/play/playSlice';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { generateNumberGrid, generateIconGrid } from '../../helpers/helpers';
 import { ReactSVG } from 'react-svg';
 
@@ -15,7 +15,9 @@ export default function Grid() {
   const grid = useAppSelector((state) => state.grid.value);
   const matched = useAppSelector((state) => state.matched.value);
   const play = useAppSelector((state) => state.play.value);
+  const [tiles, setTiles] = useState<Array<any>>([]);
 
+  // Generates grid based on theme state
   useEffect(() => {
     switch (theme) {
       case 'numbers':
@@ -25,6 +27,28 @@ export default function Grid() {
         dispatch(setGrid(generateIconGrid(gridSize)));
     }
   }, [dispatch, gridSize, theme]);
+
+  function handleClick(index: number, tile: any) {
+        dispatch(addPlay(index)); // Adds tile index number to play array
+    setTiles([...tiles, tile]); // Adds tiles to array for comparison
+  }
+
+  useEffect(() => {
+    if (play.length > 1) {
+      setTimeout(() => {
+        if (tiles[0] === tiles[1]) {
+          // Adds matched tiles to matched array
+          addMatchedTiles(tiles[0]);
+          addMatchedTiles(tiles[1]);
+          // Will add points later
+        }
+        // Reset play states
+        dispatch(resetPlay());
+        setTiles([]);
+      }, 3000);
+    }
+  }, [play, tiles, dispatch])
+  
   
   return (
     <>
@@ -32,13 +56,16 @@ export default function Grid() {
       <ul className={`grid ${gridSize === 16 ? '4x4' : '6x6'}`}>
         {grid.map((tile: any, index: number) => {
           return (
-            <li key={index}>
-              <div 
-                className={`tile ${matched.includes(index) && 'matched'}`}
-                {...matched.includes(index) && {disabled: true}}
+            <li 
+              key={index}
+              >
+              <button 
+                className={`tile ${matched.includes(index) ? 'matched' : ''} ${play.includes(index) ? 'selected' : ''}`}
+                {...(matched.includes(index) || play.includes(index) || play.length > 1) && {disabled: true}}
+                onClick={() => handleClick(index, tile)}
                 >
-                {theme === 'numbers' ? <span>{tile}</span> : <ReactSVG src={tile} />}
-              </div>
+                {theme === 'numbers' ? <span >{tile}</span> : <ReactSVG src={tile} />}
+              </button>
             </li>
           )
         })}
