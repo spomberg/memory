@@ -13,11 +13,12 @@ export const currentPlayerSlice = createSlice({
       if (state.value < actions.payload - 1) {
         state.value++; 
       } else state.value = 0;
-    }
-  },
+    },
+    resetPlayer: (state) => { state.value = 0 }
+  }
 }); 
 
-export const { nextPlayer } = currentPlayerSlice.actions;
+export const { nextPlayer, resetPlayer } = currentPlayerSlice.actions;
 
 export const selectCurrentPlayer = (state: RootState) => state.currentPlayer.value;
 
