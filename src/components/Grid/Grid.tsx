@@ -2,11 +2,11 @@ import './Grid.scss';
 import Topbar from '../Topbar/Topbar';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { setGrid } from '../../features/grid/gridSlice';
-import { addMatchedTiles } from '../../features/matched/matchedSlice';
+import { addMatchedTiles, resetMatchedTiles } from '../../features/matched/matchedSlice';
 import { useEffect, useState } from 'react';
 import { generateNumberGrid, generateIconGrid } from '../../helpers/helpers';
-import { incrementMoves } from '../../features/moves/movesSlice';
-import { nextPlayer } from '../../features/currentPlayer/currentPlayerSlice';
+import { incrementMoves, resetMoves } from '../../features/moves/movesSlice';
+import { nextPlayer, resetPlayer } from '../../features/currentPlayer/currentPlayerSlice';
 import { initiateScore, incrementScore } from '../../features/score/scoreSlice';
 import { ReactSVG } from 'react-svg';
 
@@ -31,6 +31,11 @@ export default function Grid() {
         dispatch(setGrid(generateIconGrid(gridSize)));
     }
     dispatch(initiateScore(players));
+    dispatch(resetPlayer());
+    setTiles([]);
+    setIndices([]);
+    dispatch(resetMoves());
+    dispatch(resetMatchedTiles());
   }, [dispatch, gridSize, theme, players]);
 
   function handleClick(index: number, tile: any) {
