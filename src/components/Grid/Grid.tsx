@@ -3,11 +3,13 @@ import Topbar from '../Topbar/Topbar';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { setGrid } from '../../features/grid/gridSlice';
 import { addMatchedTiles } from '../../features/matched/matchedSlice';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { generateNumberGrid, generateIconGrid } from '../../helpers/helpers';
 import { incrementMoves } from '../../features/moves/movesSlice';
 import { nextPlayer } from '../../features/currentPlayer/currentPlayerSlice';
 import { initiateScore, incrementScore } from '../../features/score/scoreSlice';
+import { addTiles, resetTiles } from '../../features/tiles/tilesSlice';
+import { addIndices, resetIndices } from '../../features/indices/indicesSlice';
 import { ReactSVG } from 'react-svg';
 
 export default function Grid() {
@@ -18,8 +20,8 @@ export default function Grid() {
   const matched = useAppSelector((state) => state.matched.value);
   const players = useAppSelector((state) => state.players.value);
   const currentPlayer = useAppSelector((state) => state.currentPlayer.value);
-  const [tiles, setTiles] = useState<Array<any>>([]); // Will hold the content of the tiles selected on each play
-  const [indices, setIndices] = useState<Array<number>>([]); // Will hold the index of the tiles selected on each play
+  const tiles = useAppSelector((state) => state.tiles.value); // Will hold the content of the tiles selected on each play
+  const indices = useAppSelector((state) => state.indices.value); // Will hold the index of the tiles selected on each play
 
   // Generates grid based on theme state
   useEffect(() => {
@@ -31,14 +33,14 @@ export default function Grid() {
         dispatch(setGrid(generateIconGrid(gridSize)));
     }
     // Resets states
-    setTiles([]);
-    setIndices([]);
+    dispatch(resetTiles());
+    dispatch(resetIndices());
     dispatch(initiateScore(players));
   }, [dispatch, gridSize, theme, players]);
 
   function handleClick(index: number, tile: any) {
-    setIndices([...indices, index]); // Adds tile index number to play array
-    setTiles([...tiles, tile]); // Adds tiles to array for comparison
+    dispatch(addIndices(index)); // Adds tile index number to play array
+    dispatch(addTiles(tile)); // Adds tiles to array for comparison
   }
 
   // Handles the play, called everytime a tile is clicked.
@@ -55,8 +57,8 @@ export default function Grid() {
         // Increment move counter
         dispatch(incrementMoves());
         // Reset play states
-        setIndices([]);
-        setTiles([]);
+        dispatch(resetIndices());
+        dispatch(resetTiles());
         // Changes player's turn
         dispatch(nextPlayer(players));
       }, 3000);
