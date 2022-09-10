@@ -1,5 +1,7 @@
 import './Grid.scss';
 import Topbar from '../Topbar/Topbar';
+import SoloScore from '../SoloScore/SoloScore';
+import MultiplayerScore from '../MultiplayerScore/MultiplayerScore';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { setGrid } from '../../features/grid/gridSlice';
 import { addMatchedTiles } from '../../features/matched/matchedSlice';
@@ -83,6 +85,7 @@ export default function Grid() {
           )
         })}
       </ul>
+      {players === 1 ? <SoloScore /> : <MultiplayerScore />}
     </>
   )
 }
