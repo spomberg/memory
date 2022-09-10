@@ -2,11 +2,11 @@ import './Grid.scss';
 import Topbar from '../Topbar/Topbar';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { setGrid } from '../../features/grid/gridSlice';
-import { addMatchedTiles, resetMatchedTiles } from '../../features/matched/matchedSlice';
+import { addMatchedTiles } from '../../features/matched/matchedSlice';
 import { useEffect, useState } from 'react';
 import { generateNumberGrid, generateIconGrid } from '../../helpers/helpers';
-import { incrementMoves, resetMoves } from '../../features/moves/movesSlice';
-import { nextPlayer, resetPlayer } from '../../features/currentPlayer/currentPlayerSlice';
+import { incrementMoves } from '../../features/moves/movesSlice';
+import { nextPlayer } from '../../features/currentPlayer/currentPlayerSlice';
 import { initiateScore, incrementScore } from '../../features/score/scoreSlice';
 import { ReactSVG } from 'react-svg';
 
@@ -30,12 +30,10 @@ export default function Grid() {
       case 'icons':
         dispatch(setGrid(generateIconGrid(gridSize)));
     }
-    dispatch(initiateScore(players));
-    dispatch(resetPlayer());
+    // Resets states
     setTiles([]);
     setIndices([]);
-    dispatch(resetMoves());
-    dispatch(resetMatchedTiles());
+    dispatch(initiateScore(players));
   }, [dispatch, gridSize, theme, players]);
 
   function handleClick(index: number, tile: any) {
@@ -63,7 +61,7 @@ export default function Grid() {
         dispatch(nextPlayer(players));
       }, 3000);
     }
-  }, [indices, tiles, dispatch, currentPlayer, players])
+  }, [indices, tiles, dispatch, players])
   
   
   return (
