@@ -1,4 +1,4 @@
-import './MultiplayerScore.scss';
+import './Score.scss';
 
 export default function MultiplayerScore() {
   return (
