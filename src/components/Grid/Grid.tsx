@@ -1,7 +1,7 @@
 import './Grid.scss';
 import Topbar from '../Topbar/Topbar';
-import SoloScore from '../SoloScore/SoloScore';
-import MultiplayerScore from '../MultiplayerScore/MultiplayerScore';
+import SoloScore from '../Score/SoloScore';
+import MultiplayerScore from '../Score/MultiplayerScore';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { setGrid } from '../../features/grid/gridSlice';
 import { addMatchedTiles } from '../../features/matched/matchedSlice';
@@ -62,6 +62,7 @@ export default function Grid() {
         dispatch(nextPlayer(players));
       }, 3000);
     }
+     // eslint-disable-next-line
   }, [indices, tiles, dispatch, players])
   
   
