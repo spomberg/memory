@@ -32,10 +32,7 @@ export default function Grid() {
       case 'icons':
         dispatch(setGrid(generateIconGrid(gridSize)));
     }
-    // Resets states
-    dispatch(resetTiles());
-    dispatch(resetIndices());
-    dispatch(initiateScore(players));
+    dispatch(initiateScore(players)); // Resets score
   }, [dispatch, gridSize, theme, players]);
 
   function handleClick(index: number, tile: any) {
