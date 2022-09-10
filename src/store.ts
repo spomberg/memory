@@ -8,6 +8,7 @@ import matchedReducer from "./features/matched/matchedSlice";
 import movesReducer from "./features/moves/movesSlice";
 import currentPlayerreducer from "./features/currentPlayer/currentPlayerSlice";
 import scoreReducer from "./features/score/scoreSlice";
+import tilesReducer from "./features/tiles/tilesSlice";
 
 export const store = configureStore({
   reducer : {
@@ -19,7 +20,8 @@ export const store = configureStore({
     matched: matchedReducer,
     moves: movesReducer,
     currentPlayer: currentPlayerreducer,
-    score: scoreReducer
+    score: scoreReducer,
+    tiles: tilesReducer
   }
 });
 
