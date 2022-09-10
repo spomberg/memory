@@ -9,6 +9,7 @@ import movesReducer from "./features/moves/movesSlice";
 import currentPlayerreducer from "./features/currentPlayer/currentPlayerSlice";
 import scoreReducer from "./features/score/scoreSlice";
 import tilesReducer from "./features/tiles/tilesSlice";
+import indicesReducer from "./features/indices/indicesSlice";
 
 export const store = configureStore({
   reducer : {
@@ -21,7 +22,8 @@ export const store = configureStore({
     moves: movesReducer,
     currentPlayer: currentPlayerreducer,
     score: scoreReducer,
-    tiles: tilesReducer
+    tiles: tilesReducer,
+    indices: indicesReducer
   }
 });
 
