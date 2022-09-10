@@ -9,11 +9,12 @@ export const gridSlice = createSlice({
   name: 'grid',
   initialState,
   reducers: {
-    setGrid: (state, actions) => { state.value = actions.payload }
+    setGrid: (state, actions) => { state.value = actions.payload },
+    resetGrid: (state) => { state.value = [] }
   }
 }); 
 
-export const { setGrid } = gridSlice.actions;
+export const { setGrid, resetGrid } = gridSlice.actions;
 
 export const selectGrid = (state: RootState) => state.grid.value;
 
