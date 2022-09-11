@@ -10,6 +10,7 @@ import currentPlayerreducer from "./features/currentPlayer/currentPlayerSlice";
 import scoreReducer from "./features/score/scoreSlice";
 import tilesReducer from "./features/tiles/tilesSlice";
 import indicesReducer from "./features/indices/indicesSlice";
+import timerReducer from "./features/timer/timerSlice";
 
 export const store = configureStore({
   reducer : {
@@ -23,7 +24,8 @@ export const store = configureStore({
     currentPlayer: currentPlayerreducer,
     score: scoreReducer,
     tiles: tilesReducer,
-    indices: indicesReducer
+    indices: indicesReducer,
+    timer: timerReducer
   }
 });
 
