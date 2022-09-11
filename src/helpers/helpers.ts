@@ -60,4 +60,19 @@ function generateIconGrid(gridSize: number) {
   return output;
 }
 
-export { generateNumberGrid, generateIconGrid };
+/**
+ * Receives the number of players and returns an array that goes from 0 to the number - 1.
+ * @param players number
+ * @returns number[]
+ */
+function convertPlayersToArr(players: number) {
+  const output: number[] = [];
+
+  for (let index = 0; index < players; index++) {
+    output.push(index);
+  }
+
+  return output;
+}
+
+export { generateNumberGrid, generateIconGrid, convertPlayersToArr };
