@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { abortGame } from '../../features/state/stateSlice';
 import { resetGrid } from '../../features/grid/gridSlice';
 import { setGrid } from '../../features/grid/gridSlice';
-import { generateNumberGrid, generateIconGrid } from '../../helpers/helpers';
+import { generateNumberGrid, generateIconGrid } from '../../helpers/generateGrid';
 
 export default function Topbar(props: {resetStates: any}) {
   const dispatch = useAppDispatch();

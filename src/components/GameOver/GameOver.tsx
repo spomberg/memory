@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { useAppSelector, useAppDispatch } from '../../hooks/hooks';
 import { useEffect, useRef } from 'react';
 import { setGrid, resetGrid } from '../../features/grid/gridSlice';
-import { generateNumberGrid, generateIconGrid } from '../../helpers/helpers';
+import { generateNumberGrid, generateIconGrid } from '../../helpers/generateGrid';
 import { abortGame, startGame } from '../../features/state/stateSlice';
 
 export default function GameOverSolo(props: {resetStates: any}) {

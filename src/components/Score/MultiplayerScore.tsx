@@ -1,6 +1,6 @@
 import './Score.scss';
 import { useAppSelector } from '../../hooks/hooks';
-import { convertPlayersToArr } from '../../helpers/helpers';
+import { convertPlayersToArr } from '../../helpers/generateGrid';
 
 export default function MultiplayerScore() {
   const players = useAppSelector((state) => state.players.value);

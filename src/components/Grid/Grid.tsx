@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { setGrid } from '../../features/grid/gridSlice';
 import { addMatchedTiles, resetMatchedTiles } from '../../features/matched/matchedSlice';
 import { useEffect } from 'react';
-import { generateNumberGrid, generateIconGrid } from '../../helpers/helpers';
+import { generateNumberGrid, generateIconGrid } from '../../helpers/generateGrid';
 import { incrementMoves, resetMoves } from '../../features/moves/movesSlice';
 import { nextPlayer } from '../../features/currentPlayer/currentPlayerSlice';
 import { initiateScore, incrementScore } from '../../features/score/scoreSlice';
