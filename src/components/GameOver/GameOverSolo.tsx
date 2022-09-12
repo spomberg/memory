@@ -2,14 +2,22 @@ import './GameOver.scss';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { useAppSelector } from '../../hooks/hooks';
+import { useEffect, useRef } from 'react';
 
 export default function GameOverSolo() {
   const state = useAppSelector((state) => state.state.value);
   const players = useAppSelector((state) => state.players.value);
+  const show = useRef(false);
+  
+  useEffect(() => {
+    if (state === 'resultsPage' && players === 1) {
+      show.current = true
+    }
+  }, [show, state, players])
   
   return (
     <>
-      <Modal show={state === 'resultsPage' && players === 1 && true }>
+      <Modal show={show.current}>
         <Modal.Header>
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
