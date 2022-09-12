@@ -4,10 +4,10 @@ import SoloScore from '../Score/SoloScore';
 import MultiplayerScore from '../Score/MultiplayerScore';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { setGrid } from '../../features/grid/gridSlice';
-import { addMatchedTiles } from '../../features/matched/matchedSlice';
+import { addMatchedTiles, resetMatchedTiles } from '../../features/matched/matchedSlice';
 import { useEffect } from 'react';
 import { generateNumberGrid, generateIconGrid } from '../../helpers/helpers';
-import { incrementMoves } from '../../features/moves/movesSlice';
+import { incrementMoves, resetMoves } from '../../features/moves/movesSlice';
 import { nextPlayer } from '../../features/currentPlayer/currentPlayerSlice';
 import { initiateScore, incrementScore } from '../../features/score/scoreSlice';
 import { addTiles, resetTiles } from '../../features/tiles/tilesSlice';
@@ -16,7 +16,8 @@ import { ReactSVG } from 'react-svg';
 import { gameOver } from '../../features/state/stateSlice';
 import { useStopwatch } from 'react-timer-hook';
 import { setTimer } from '../../features/timer/timerSlice';
-import GameOverSolo from '../GameOver/GameOverSolo';
+import { resetPlayer } from '../../features/currentPlayer/currentPlayerSlice';
+import GameOver from '../GameOver/GameOver';
 
 export default function Grid() {
   const dispatch = useAppDispatch();
@@ -29,6 +30,17 @@ export default function Grid() {
   const tiles = useAppSelector((state) => state.tiles.value); // Will hold the content of the tiles selected on each play
   const indices = useAppSelector((state) => state.indices.value); // Will hold the index of the tiles selected on each play
   const { seconds, minutes, reset, pause } = useStopwatch({ autoStart: true })
+
+  // Resets states
+  const resetStates = () => {
+    dispatch(resetPlayer());
+    dispatch(resetMoves());
+    dispatch(resetMatchedTiles());
+    dispatch(resetTiles());
+    dispatch(resetIndices());
+    dispatch(initiateScore(players));
+    reset();
+  }
 
   // Updates timer state to match timer hook 
   useEffect(() => {
@@ -89,7 +101,7 @@ export default function Grid() {
   
   return (
     <>
-      <Topbar reset={reset}/>
+      <Topbar resetStates={resetStates}/>
       <ul className={`grid ${gridSize === 16 ? '4x4' : '6x6'}`}>
         {grid.map((tile: any, index: number) => {
           return (
@@ -108,7 +120,7 @@ export default function Grid() {
         })}
       </ul>
       {players === 1 ? <SoloScore /> : <MultiplayerScore />}
-      <GameOverSolo />
+      <GameOver resetStates={resetStates}/>
     </>
   )
 }
