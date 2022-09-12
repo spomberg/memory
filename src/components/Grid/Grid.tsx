@@ -14,8 +14,9 @@ import { addTiles, resetTiles } from '../../features/tiles/tilesSlice';
 import { addIndices, resetIndices } from '../../features/indices/indicesSlice';
 import { ReactSVG } from 'react-svg';
 import { gameOver } from '../../features/state/stateSlice';
+import { useStopwatch } from 'react-timer-hook';
+import { setTimer } from '../../features/timer/timerSlice';
 import GameOverSolo from '../GameOver/GameOverSolo';
-import GameOverMultiplayer from '../GameOver/GameOverMultiplayer';
 
 export default function Grid() {
   const dispatch = useAppDispatch();
@@ -27,6 +28,15 @@ export default function Grid() {
   const currentPlayer = useAppSelector((state) => state.currentPlayer.value);
   const tiles = useAppSelector((state) => state.tiles.value); // Will hold the content of the tiles selected on each play
   const indices = useAppSelector((state) => state.indices.value); // Will hold the index of the tiles selected on each play
+  const { seconds, minutes, reset, pause } = useStopwatch({ autoStart: true })
+
+  // Updates timer state to match timer hook 
+  useEffect(() => {
+    const time = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+    dispatch(setTimer(time));
+  
+  }, [dispatch, minutes, seconds])
 
   // Generates grid based on theme state
   useEffect(() => {
@@ -71,14 +81,15 @@ export default function Grid() {
   // Changes game state and pauses timer if the length of the matched array is equal to the grid size
   useEffect(() => {
     if (matched.length === gridSize) {
+      pause();
       dispatch(gameOver());
     }
-  }, [matched, gridSize, dispatch])
+  }, [matched, gridSize, dispatch, pause])
    
   
   return (
     <>
-      <Topbar />
+      <Topbar reset={reset}/>
       <ul className={`grid ${gridSize === 16 ? '4x4' : '6x6'}`}>
         {grid.map((tile: any, index: number) => {
           return (
