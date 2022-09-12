@@ -13,6 +13,9 @@ import { initiateScore, incrementScore } from '../../features/score/scoreSlice';
 import { addTiles, resetTiles } from '../../features/tiles/tilesSlice';
 import { addIndices, resetIndices } from '../../features/indices/indicesSlice';
 import { ReactSVG } from 'react-svg';
+import { gameOver } from '../../features/state/stateSlice';
+import GameOverSolo from '../GameOver/GameOverSolo';
+import GameOverMultiplayer from '../GameOver/GameOverMultiplayer';
 
 export default function Grid() {
   const dispatch = useAppDispatch();
@@ -64,7 +67,14 @@ export default function Grid() {
     }
      // eslint-disable-next-line
   }, [indices, tiles, dispatch, players])
-  
+
+  // Changes game state and pauses timer if the length of the matched array is equal to the grid size
+  useEffect(() => {
+    if (matched.length === gridSize) {
+      dispatch(gameOver());
+    }
+  }, [matched, gridSize, dispatch])
+   
   
   return (
     <>
@@ -87,6 +97,7 @@ export default function Grid() {
         })}
       </ul>
       {players === 1 ? <SoloScore /> : <MultiplayerScore />}
+      <GameOverSolo />
     </>
   )
 }
