@@ -12,6 +12,8 @@ export default function GameOverSolo(props: {resetStates: any}) {
   const show = useRef(false);
   const theme = useAppSelector((state) => state.theme.value);
   const gridSize = useAppSelector((state) => state.gridSize.value); 
+  const time = useAppSelector((state) => state.timer.value);
+  const moves = useAppSelector((state) => state.moves.value);
   const dispatch = useAppDispatch();
   
   // Turns modal on every time the state changes to resultsPage
@@ -25,9 +27,19 @@ export default function GameOverSolo(props: {resetStates: any}) {
     <>
       <Modal show={show.current}>
         <Modal.Header>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>You did it!</Modal.Title>
+          <span>Game over! Here's how you got on...</span>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body>
+          <div className='results-box'>
+            <span>Time Elapsed</span>
+            <h3>{time}</h3>
+          </div>
+          <div className='results-box'>
+            <span>Moves Taken</span>
+            <h3>{moves}</h3>
+          </div>
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => {
             props.resetStates();
