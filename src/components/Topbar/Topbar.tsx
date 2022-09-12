@@ -10,16 +10,12 @@ import { generateNumberGrid, generateIconGrid } from '../../helpers/helpers';
 import { resetTiles } from '../../features/tiles/tilesSlice';
 import { resetIndices } from '../../features/indices/indicesSlice';
 import { initiateScore } from '../../features/score/scoreSlice';
-import { useStopwatch } from 'react-timer-hook';
-import { setTimer } from '../../features/timer/timerSlice';
-import { useEffect } from 'react';
 
-export default function Topbar() {
+export default function Topbar(props: {reset: any}) {
   const dispatch = useAppDispatch();
   const theme = useAppSelector((state) => state.theme.value);
   const gridSize = useAppSelector((state) => state.gridSize.value);
   const players = useAppSelector((state) => state.players.value);
-  const { seconds, minutes, reset } = useStopwatch({ autoStart: true })
 
   // Resets states
   const resetStates = () => {
@@ -29,15 +25,8 @@ export default function Topbar() {
     dispatch(resetTiles());
     dispatch(resetIndices());
     dispatch(initiateScore(players));
-    reset();
+    props.reset();
   }
-
-  useEffect(() => {
-    const time = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-
-    dispatch(setTimer(time));
-  
-  }, [dispatch, minutes, seconds])
 
   return (
     <div className='topbar'>
