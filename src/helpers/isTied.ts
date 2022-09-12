@@ -4,7 +4,13 @@
  * @returns boolean or number
  */
  function isTied(score: number[]) {
-  return null;
+  if (score.length === 1) return false;
+
+  const sortedScore = score.sort((a, b) => b - a);
+  
+  if (sortedScore[0] === sortedScore[1]) {
+    return sortedScore[0]
+  } else return false
 }
 
 export { isTied };
