@@ -58,16 +58,16 @@ export default function Grid() {
   // Handles the play, called everytime a tile is clicked.
   useEffect(() => {
     if (indices.length > 1) {
+      if (tiles[0] === tiles[1]) {
+        // Adds matched tiles to matched array
+        dispatch(addMatchedTiles(indices[0]));
+        dispatch(addMatchedTiles(indices[1]));
+        // Increments score
+        dispatch(incrementScore(currentPlayer));
+      }
+      // Increment move counter
+      dispatch(incrementMoves());
       setTimeout(() => {
-        if (tiles[0] === tiles[1]) {
-          // Adds matched tiles to matched array
-          dispatch(addMatchedTiles(indices[0]));
-          dispatch(addMatchedTiles(indices[1]));
-          // Increments score
-          dispatch(incrementScore(currentPlayer));
-        }
-        // Increment move counter
-        dispatch(incrementMoves());
         // Reset play states
         dispatch(resetIndices());
         dispatch(resetTiles());
