@@ -27,15 +27,9 @@ export default function GameOverSolo(props: {resetStates: any}) {
     if (state === 'resultsPage') {
       setIsGameTied(isTied(score));
       setFinalScore(generateFinalScore(score));
+      setShow(true);
     } else setShow(false);
   }, [state, score])
-
-  // Show modal once finalScore state is changed
-  useEffect(() => {
-    setShow(true);
-    console.log(finalScore);
-    
-  }, [finalScore])
   
   return (
     <>
@@ -61,6 +55,7 @@ export default function GameOverSolo(props: {resetStates: any}) {
         {(players !== 1 && state === 'resultsPage') && (
           <>
             <Modal.Header>
+              <Modal.Title>{isGameTied ? `It's a tie!` : `Player ${finalScore[0].player} Wins!`}</Modal.Title>
               <span>Game over! Here are the results...</span>
             </Modal.Header>
             <Modal.Body>
@@ -69,7 +64,7 @@ export default function GameOverSolo(props: {resetStates: any}) {
                   return(
                     <li key={index}>
                       <div className={`results-box ${(index === 0 || score.score === isGameTied) ? 'winner' : ''}`}>
-                        <span>{`Player ${score.player} ${(index === 0 || score.score === isGameTied) && '(Winner)'}`}</span>
+                        <span>{`Player ${score.player} ${(index === 0 || score.score === isGameTied) ? '(Winner)' : ''}`}</span>
                         <h3>{`${score.score} ${score.score === 1 ? 'Pair' : 'Pairs'}`}</h3>
                       </div>
                     </li>
