@@ -7,7 +7,7 @@ function App() {
   const state = useAppSelector((state) => state.state.value);
 
   return (
-    <div className="App">
+    <div className="app">
       {state === 'startPage' && <Start />}
       {(state === 'gamePage' || state === 'resultsPage') && <Grid />}
     </div>
