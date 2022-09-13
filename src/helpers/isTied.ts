@@ -6,7 +6,7 @@
  function isTied(score: number[]) {
   if (score.length === 1) return false;
 
-  const sortedScore = score.sort((a, b) => b - a);
+  const sortedScore = [...score].sort((a, b) => b - a);
   
   if (sortedScore[0] === sortedScore[1]) {
     return sortedScore[0]
