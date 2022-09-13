@@ -13,7 +13,7 @@ export default function Start() {
 
   return (
     <div className='start'>
-      <h1>memory</h1>
+      <h1 className='start-title'>memory</h1>
       <div className='game-settings'>
         <div>
           <span>Select Theme</span>
@@ -32,7 +32,7 @@ export default function Start() {
             </button>
           </div>
         </div>
-        <div>
+        <div className='number-of-players'>
           <span>Number of Players</span>
           <div className='buttons-line'>
             <button
@@ -78,12 +78,14 @@ export default function Start() {
             </button>
           </div>
         </div>
-        <button 
-          className='start-button'
-          onClick={() => dispatch(startGame())}
-        >
-          Start Game
-        </button>
+        <div>
+          <button 
+            className='start-button'
+            onClick={() => dispatch(startGame())}
+          >
+            Start Game
+          </button>
+        </div>
       </div>
     </div>
   )
