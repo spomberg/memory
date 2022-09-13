@@ -2,14 +2,18 @@ import './GameOver.scss';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { useAppSelector, useAppDispatch } from '../../hooks/hooks';
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { setGrid, resetGrid } from '../../features/grid/gridSlice';
 import { generateNumberGrid, generateIconGrid } from '../../helpers/generateGrid';
 import { abortGame, startGame } from '../../features/state/stateSlice';
+import { isTied } from '../../helpers/isTied';
+import { generateFinalScore } from '../../helpers/generateFinalScore';
 
 export default function GameOverSolo(props: {resetStates: any}) {
   const state = useAppSelector((state) => state.state.value);
-  const show = useRef(false);
+  const [show, setShow] = useState(false);
+  const [isGameTied, setIsGameTied] = useState<any>(false);
+  const [finalScore, setFinalScore] = useState<any>([{ player: 0, score: 0 }]);
   const theme = useAppSelector((state) => state.theme.value);
   const gridSize = useAppSelector((state) => state.gridSize.value); 
   const time = useAppSelector((state) => state.timer.value);
@@ -21,14 +25,22 @@ export default function GameOverSolo(props: {resetStates: any}) {
   // Turns modal on every time the state changes to resultsPage
   useEffect(() => {
     if (state === 'resultsPage') {
-      show.current = true;
-    } else show.current = false;
-  }, [show, state])
+      setIsGameTied(isTied(score));
+      setFinalScore(generateFinalScore(score));
+    } else setShow(false);
+  }, [state, score])
+
+  // Show modal once finalScore state is changed
+  useEffect(() => {
+    setShow(true);
+    console.log(finalScore);
+    
+  }, [finalScore])
   
   return (
     <>
-      <Modal show={show.current}>
-        {players === 1 && (
+      <Modal show={show}>
+        {(players === 1 && state === 'resultsPage') && (
           <>
             <Modal.Header>
               <Modal.Title>You did it!</Modal.Title>
@@ -43,6 +55,27 @@ export default function GameOverSolo(props: {resetStates: any}) {
                 <span>Moves Taken</span>
                 <h3>{moves}</h3>
               </div>
+            </Modal.Body>
+          </>
+        )}
+        {(players !== 1 && state === 'resultsPage') && (
+          <>
+            <Modal.Header>
+              <span>Game over! Here are the results...</span>
+            </Modal.Header>
+            <Modal.Body>
+              <ul>
+                {finalScore.map((score: any, index: number) => {
+                  return(
+                    <li key={index}>
+                      <div className={`results-box ${(index === 0 || score.score === isGameTied) ? 'winner' : ''}`}>
+                        <span>{`Player ${score.player} ${(index === 0 || score.score === isGameTied) && '(Winner)'}`}</span>
+                        <h3>{`${score.score} ${score.score === 1 ? 'Pair' : 'Pairs'}`}</h3>
+                      </div>
+                    </li>
+                  )
+                })}
+              </ul>
             </Modal.Body>
           </>
         )}
