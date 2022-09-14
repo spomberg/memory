@@ -18,6 +18,7 @@ import { useStopwatch } from 'react-timer-hook';
 import { setTimer } from '../../features/timer/timerSlice';
 import { resetPlayer } from '../../features/currentPlayer/currentPlayerSlice';
 import GameOver from '../GameOver/GameOver';
+import { showGrid } from '../../features/showGrid/showGridSlice';
 
 export default function Grid() {
   const dispatch = useAppDispatch();
@@ -61,6 +62,14 @@ export default function Grid() {
     }
     dispatch(initiateScore(players)); // Resets score
   }, [dispatch, gridSize, theme, players]);
+
+  // Changes grid opacity to 100 once component is mounted
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(showGrid());
+    }, 500);
+  }, [dispatch])
+  
 
   function handleClick(index: number, tile: any) {
     dispatch(addIndices(index)); // Adds tile index number to play array
