@@ -4,15 +4,25 @@ import { setIconsTheme, setNumbersTheme } from '../../features/theme/themeSlice'
 import { setPlayers } from '../../features/players/playersSlice';
 import { setGridSize } from '../../features/gridSize/gridSizeSlice';
 import { startGame } from '../../features/state/stateSlice';
+import { hideStart, showStart } from '../../features/showStart/showStartSlice';
+import { useEffect } from 'react';
 
 export default function Start() {
   const dispatch = useAppDispatch();
   const theme = useAppSelector((state) => state.theme.value);
   const players = useAppSelector((state) => state.players.value);
   const gridSize = useAppSelector((state) => state.gridSize.value);
+  const isStartShowing = useAppSelector((state) => state.showStart.value);
+
+  // Shows component 0.5s after it mounts - for animation purposes
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(showStart());
+    }, 500);
+  }, [dispatch])
 
   return (
-    <div className='start'>
+    <div className={`start ${isStartShowing ? '' : 'hidden'}`}>
       <h1 className='start-title'>memory</h1>
       <div className='game-settings'>
         <div>
@@ -81,7 +91,12 @@ export default function Start() {
         <div>
           <button 
             className='start-button'
-            onClick={() => dispatch(startGame())}
+            onClick={() => {
+              dispatch(hideStart());
+              setTimeout(() => {
+                dispatch(startGame());
+              }, 500);
+            }}
           >
             Start Game
           </button>
