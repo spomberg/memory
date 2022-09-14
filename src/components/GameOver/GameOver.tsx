@@ -8,6 +8,7 @@ import { generateNumberGrid, generateIconGrid } from '../../helpers/generateGrid
 import { abortGame, startGame } from '../../features/state/stateSlice';
 import { isTied } from '../../helpers/isTied';
 import { generateFinalScore } from '../../helpers/generateFinalScore';
+import { hideGrid } from '../../features/showGrid/showGridSlice';
 
 export default function GameOverSolo(props: {resetStates: any}) {
   const state = useAppSelector((state) => state.state.value);
@@ -89,9 +90,13 @@ export default function GameOverSolo(props: {resetStates: any}) {
             Restart
           </Button>
           <Button variant="primary" onClick={() => {
-            props.resetStates();
-            dispatch(abortGame());
-            dispatch(resetGrid());
+            setShow(false);
+            dispatch(hideGrid());
+            setTimeout(() => {
+              props.resetStates();
+              dispatch(resetGrid());
+              dispatch(abortGame());
+            }, 500);
           }}>
             Start New Game
           </Button>
