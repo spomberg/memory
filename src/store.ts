@@ -11,6 +11,8 @@ import scoreReducer from "./features/score/scoreSlice";
 import tilesReducer from "./features/tiles/tilesSlice";
 import indicesReducer from "./features/indices/indicesSlice";
 import timerReducer from "./features/timer/timerSlice";
+import showStartReducer from "./features/showStart/showStartSlice";
+import showGridReducer from "./features/showGrid/showGridSlice";
 
 export const store = configureStore({
   reducer : {
@@ -25,7 +27,9 @@ export const store = configureStore({
     score: scoreReducer,
     tiles: tilesReducer,
     indices: indicesReducer,
-    timer: timerReducer
+    timer: timerReducer,
+    showStart: showStartReducer,
+    showGrid: showGridReducer
   }
 });
 
