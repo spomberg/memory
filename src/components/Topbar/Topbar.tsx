@@ -4,6 +4,7 @@ import { abortGame } from '../../features/state/stateSlice';
 import { resetGrid } from '../../features/grid/gridSlice';
 import { setGrid } from '../../features/grid/gridSlice';
 import { generateNumberGrid, generateIconGrid } from '../../helpers/generateGrid';
+import { hideGrid } from '../../features/showGrid/showGridSlice';
 
 export default function Topbar(props: {resetStates: any}) {
   const dispatch = useAppDispatch();
@@ -31,8 +32,11 @@ export default function Topbar(props: {resetStates: any}) {
         <button 
           onClick={() => {
             props.resetStates();
-            dispatch(abortGame());
-            dispatch(resetGrid());
+            dispatch(hideGrid());
+            setTimeout(() => {
+              dispatch(resetGrid());
+              dispatch(abortGame());
+            }, 300);
         }}>
           New Game
         </button>
