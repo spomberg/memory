@@ -1,1 +1,9 @@
 @import "~bootstrap/scss/bootstrap";
+
+.grid-page {
+  transition: all 0.3s ease;
+
+  &.hidden {
+    opacity: 0;
+  }
+}
