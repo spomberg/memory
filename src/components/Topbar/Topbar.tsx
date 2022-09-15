@@ -16,6 +16,7 @@ export default function Topbar(props: {resetStates: any}) {
       <h1>memory</h1>
       <div>
         <button
+          className='restart-button'
           onClick={() => {
             props.resetStates();
             switch (theme) {
@@ -30,6 +31,7 @@ export default function Topbar(props: {resetStates: any}) {
           Restart
         </button>
         <button 
+        className='new-game-button'
           onClick={() => {
             props.resetStates();
             dispatch(hideGrid());
