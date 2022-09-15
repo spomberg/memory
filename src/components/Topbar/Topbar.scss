@@ -1,0 +1,33 @@
+@import '../../styles/variables.scss';
+
+.topbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2%;
+  font-family: 'AtkinsonHyperlegible';
+
+  div {
+    display: flex;
+    width: 25%;
+    justify-content: space-evenly;
+
+    button {
+      border-radius: 25px;
+      width: 40%;
+      border-style: none;
+      transition: all 0.3s ease;
+      height: 100%;
+      padding: 3%;
+
+      &:hover {
+        opacity: 80%;
+      }
+    }
+
+    .restart-button {
+      background-color: $main-button-color;
+      color: $grid-bg-color;
+    }
+  }
+}
