@@ -17,7 +17,7 @@
 
   .start-title {
     position: absolute;
-    top: 15%;
+    top: 12%;
     font-size: xx-large;
   }
 
@@ -26,23 +26,25 @@
     flex-direction: column;
     justify-content: center;
     background-color: $grid-bg-color;
-    padding: 2.5%;
+    padding: 3.5%;
+    padding-bottom: 4%;
     margin-top: 3%;
     border-radius: 25px;
-    height: 50%;
-    width: 35%;
+    height: 55%;
+    width: 40%;
+    font-size: x-large;
 
     button {
       color: $grid-bg-color;
       border-radius: 25px;
       border-style: none;
       transition: all 0.3s ease;
-      height: 70%;
+      height: 60%;
       width: 48%;
       background-color: $idle-button-color;
     
       &:hover {
-        opacity: 80%;
+        background-color: $hover-button-color;
       }
     }
 
@@ -58,26 +60,31 @@
 
     .number-of-players {
       button {
-        width: 20%;
+        width: 22%;
       }
     }
 
     div {
-      margin-bottom: 3%;
+      margin-bottom: 4%;
       width: 100%;
       height: 80%;
     }
 
     span {
       color: $font-color;
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
 
     .start-button {
       width: 100%;
-      height: 85%;
+      height: 120%;
       margin-top: 2%;
       background-color: $main-button-color;
+
+      &:hover {
+        opacity: 80%;
+        background-color: $main-button-color;
+      }
     }
   }
 }
