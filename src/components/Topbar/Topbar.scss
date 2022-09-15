@@ -35,7 +35,7 @@
       color: $selected-button-color;
 
       &:hover {
-        background-color: $selected-button-color;
+        background-color: $hover-button-color;
         color: $grid-bg-color;
       }
     }
