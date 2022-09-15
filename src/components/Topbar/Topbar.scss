@@ -29,5 +29,15 @@
       background-color: $main-button-color;
       color: $grid-bg-color;
     }
+
+    .new-game-button {
+      background-color: $idle-button-color;
+      color: $selected-button-color;
+
+      &:hover {
+        background-color: $selected-button-color;
+        color: $grid-bg-color;
+      }
+    }
   }
 }
