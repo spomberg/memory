@@ -1,9 +1,26 @@
 .grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15%;
+  padding-bottom: 0;
+  padding-top: 5%;
+
   li {
     list-style: none;
     cursor: pointer;
-    background-color: black;
-    width: 10%;
+    width: 12%;
+    margin-bottom: 3%;
+    margin-right: 3%;
+
+    button {
+      width: 100%;
+      padding: 40%;
+      border-radius: 50%;
+    }
 
     &.selected {
       .tile {
@@ -28,6 +45,5 @@
         visibility: hidden;
       }
     }
-
   }
 }
