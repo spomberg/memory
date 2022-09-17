@@ -5,20 +5,22 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 15%;
+  padding: 35%;
   padding-bottom: 0;
   padding-top: 5%;
+  font-family: 'AtkinsonHyperlegible';
+  font-size: 56px;
 
   li {
     list-style: none;
     cursor: pointer;
-    width: 12%;
-    margin-bottom: 3%;
-    margin-right: 3%;
+    width: 20%;
+    margin-bottom: 5%;
+    margin-right: 5%;
 
     button {
       width: 100%;
-      padding: 40%;
+      padding: 10%;
       border-radius: 50%;
     }
 
