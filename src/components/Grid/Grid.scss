@@ -32,11 +32,22 @@
       span {
         visibility: hidden;
       }
+
+      svg {
+        visibility: hidden;
+        max-width: 55%;
+        fill: $grid-bg-color;
+        margin-bottom: 10%;
+      }
       
       &.selected {
         background-color: $main-button-color;
         
         span {
+          visibility: inherit;
+        }
+
+        svg {
           visibility: inherit;
         }
       }
@@ -45,6 +56,10 @@
         background-color: $idle-button-color;
         
         span {
+          visibility: inherit;
+        }
+
+        svg {
           visibility: inherit;
         }
       }
