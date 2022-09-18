@@ -9,18 +9,15 @@ export default function MultiplayerScore() {
   const currentPlayer = useAppSelector((state) => state.currentPlayer.value);
 
   return (
-    <div className='score'>
+    <div className='score multiplayer'>
       <ul>
         {playersArr.map((index: number) => {
           return (
-            <li 
-              className={`score-box ${currentPlayer === index ? 'current-player' : ''}`}
-              key={index}
-            >
+            <li key={index}>
               {currentPlayer === index && <div className='triangle'></div>}
-              <div>
+              <div className={`score-box ${currentPlayer === index ? 'current-player' : ''}`}>
                 <span>Player {index + 1}</span>
-                <span>{score[index]}</span>
+                <h3>{score[index]}</h3>
               </div>
               {currentPlayer === index && <span className='current-turn'>CURRENT TURN</span>}
             </li>
