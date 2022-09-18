@@ -1,0 +1,33 @@
+@import '../../styles/variables.scss';
+
+.score {
+  display: flex;
+  flex-direction: row;
+  font-family: 'AtkinsonHyperlegible';
+  width: 50%;
+  margin-left: 25%;
+  justify-content: center;
+
+  .score-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+    margin-right: 3%;
+    width: 35%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    align-items: center;
+    background-color: $idle-button-color;
+    border-radius: 5px;
+
+    span {
+      color: $font-color;
+    }
+
+    h3 {
+      margin-top: 1.5%;
+    }
+  }
+}
