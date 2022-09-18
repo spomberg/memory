@@ -14,7 +14,7 @@ export default function MultiplayerScore() {
         {playersArr.map((index: number) => {
           return (
             <li key={index}>
-              {currentPlayer === index && <div className='triangle'></div>}
+              <div className={`triangle ${currentPlayer === index ? 'show' : ''}`}></div>
               <div className={`score-box ${currentPlayer === index ? 'current-player' : ''}`}>
                 <span>Player {index + 1}</span>
                 <h3>{score[index]}</h3>
