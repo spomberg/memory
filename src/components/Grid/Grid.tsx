@@ -111,7 +111,7 @@ export default function Grid() {
   return (
     <>
       <Topbar resetStates={resetStates}/>
-      <ul className={`grid ${gridSize === 16 ? '4x4' : '6x6'}`}>
+      <ul className={`grid ${gridSize === 16 ? 'four-by-four' : 'six-by-six'}`}>
         {grid.map((tile: any, index: number) => {
           return (
             <li 
