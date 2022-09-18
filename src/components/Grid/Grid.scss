@@ -12,6 +12,23 @@
   padding-top: 5%;
   font-family: 'AtkinsonHyperlegible';
   font-size: 56px;
+
+  &.six-by-six {
+    padding-top: 3%;
+    padding-left: 25%;
+    padding-right: 25%;
+    font-size: 44px;
+
+    li {
+      width: 10%;
+      margin-bottom: 2%;
+      margin-right: 5%;
+
+      button {
+        padding: 10%;
+      }
+    }
+  }
   
   li {
     list-style: none;
