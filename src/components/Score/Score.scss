@@ -8,43 +8,6 @@
   margin-left: 25%;
   justify-content: center;
 
-  &.multiplayer {
-    width: 80%;
-    margin-left: 10%;
-
-    ul {
-      display: flex;
-      justify-content: center;
-      margin-top: 1%;
-      width: 100%;
-      justify-content: space-between;
-      
-      li {
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
-        align-items: center;
-        list-style: none;
-        width: 25%;
-  
-        .current-turn {
-          margin-right: 5%;
-          margin-top: 5%;
-          font-size: small;
-          transition: all 0.3s ease;
-        }
-        
-        .score-box {
-          width: 75%;
-          padding-left: 5%;
-          padding-right: 5%;
-          transition: all 0.5s ease;
-        }
-      }
-    }
-  }
-
-
   .score-box {
     display: flex;
     justify-content: space-between;
@@ -65,6 +28,65 @@
 
     h3 {
       margin-top: 1.5%;
+    }
+  }
+
+  &.multiplayer {
+    width: 80%;
+    margin-left: 10%;
+
+    ul {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      justify-content: space-between;
+      
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style: none;
+        width: 25%;
+  
+        .current-turn {
+          margin-right: 5%;
+          margin-top: 5%;
+          font-size: small;
+          transition: all 0.3s ease;
+        }
+
+        .triangle {
+          visibility: hidden;
+          border-left: 25px solid transparent;
+          border-right: 25px solid transparent;
+          border-bottom: 25px solid $main-button-color;
+          margin-bottom: -5%;
+
+          &.show {
+            visibility: inherit;
+          }
+        }
+        
+        .score-box {
+          width: 75%;
+          padding-left: 5%;
+          padding-right: 5%;
+          transition: all 0.5s ease;
+
+          h3 {
+            margin-top: 3%;
+          }
+
+          &.current-player {
+            background-color: $main-button-color;
+            color: $grid-bg-color;
+
+            span {
+              color: $grid-bg-color;
+            }
+          }
+        }
+      }
     }
   }
 }
