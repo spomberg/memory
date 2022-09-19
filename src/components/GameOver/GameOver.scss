@@ -24,6 +24,10 @@
   }
 
   .modal-body {
+    ul {
+      padding-left: 0;
+    }
+
     li {
       list-style: none;
       justify-self: center;
