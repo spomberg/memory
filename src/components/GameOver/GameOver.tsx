@@ -76,7 +76,7 @@ export default function GameOverSolo(props: {resetStates: any}) {
           </>
         )}
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => {
+          <Button className='restart-button' onClick={() => {
             props.resetStates();
             dispatch(startGame());
             switch (theme) {
@@ -89,16 +89,18 @@ export default function GameOverSolo(props: {resetStates: any}) {
           }}>
             Restart
           </Button>
-          <Button variant="primary" onClick={() => {
-            setShow(false);
-            dispatch(hideGrid());
-            setTimeout(() => {
-              props.resetStates();
-              dispatch(resetGrid());
-              dispatch(abortGame());
-            }, 500);
+          <Button 
+            className='new-game-button'
+            onClick={() => {
+              setShow(false);
+              dispatch(hideGrid());
+              setTimeout(() => {
+                props.resetStates();
+                dispatch(resetGrid());
+                dispatch(abortGame());
+              }, 500);
           }}>
-            Start New Game
+            Setup New Game
           </Button>
         </Modal.Footer>
       </Modal>
