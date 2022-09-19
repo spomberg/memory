@@ -1,0 +1,63 @@
+@import '../../styles/variables.scss';
+
+.game-over {
+  font-family: 'AtkinsonHyperlegible';
+
+  .modal-header {
+    display: flex;
+    flex-direction: column;
+    border-bottom-style: none;
+    margin-top: 1%;
+
+    .modal-title {
+      font-size: xx-large;
+      color: $start-bg-color;
+    }
+
+    span {
+      color: $font-color;
+      margin-top: 1%;
+    }
+  }
+
+  .modal-body {
+    ul {
+      margin: 0;
+      padding: 0;
+      width: 90%;
+      margin-left: 5%;
+    }
+
+    li {
+      list-style: none;
+      justify-self: center;
+    }
+
+    .results-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $idle-button-color;
+      margin-bottom: 3%;
+      padding: 1.0%;
+      padding-left: 5%;
+      padding-right: 5%;
+      border-radius: 5px;
+      color: $font-color;
+
+      h3 {
+        margin-top: 1%;
+        color: $selected-button-color;
+      }
+
+      &.winner {
+        background-color: $start-bg-color;
+        color: $grid-bg-color;
+
+        h3 {
+          color: $grid-bg-color;
+        }
+      }
+    }
+  }
+}
