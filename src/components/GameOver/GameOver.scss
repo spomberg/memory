@@ -3,11 +3,14 @@
 .game-over {
   font-family: 'AtkinsonHyperlegible';
 
+  .modal-content {
+    padding: 5%;
+  }
+  
   .modal-header {
     display: flex;
     flex-direction: column;
     border-bottom-style: none;
-    margin-top: 1%;
 
     .modal-title {
       font-size: xx-large;
@@ -21,13 +24,6 @@
   }
 
   .modal-body {
-    ul {
-      margin: 0;
-      padding: 0;
-      width: 90%;
-      margin-left: 5%;
-    }
-
     li {
       list-style: none;
       justify-self: center;
@@ -39,7 +35,7 @@
       align-items: center;
       background-color: $idle-button-color;
       margin-bottom: 3%;
-      padding: 1.0%;
+      padding-top: 1.0%;
       padding-left: 5%;
       padding-right: 5%;
       border-radius: 5px;
@@ -58,6 +54,28 @@
           color: $grid-bg-color;
         }
       }
+    }
+  }
+
+  .modal-footer {
+    display: flex;
+    border-top-style: none;
+    padding-top: 0;
+    justify-content: space-between;
+    
+    button {
+      width: 45%;
+      border-radius: 50px;
+      border-style: none;
+    }
+
+    .restart-button {
+      background-color: $main-button-color;
+    }
+
+    .new-game-button {
+      background-color: $idle-button-color;
+      color: $selected-button-color;
     }
   }
 }
