@@ -34,7 +34,7 @@ export default function GameOverSolo(props: {resetStates: any}) {
   
   return (
     <>
-      <Modal show={show}>
+      <Modal className='game-over' show={show}>
         {(players === 1 && state === 'resultsPage') && (
           <>
             <Modal.Header>
@@ -65,7 +65,7 @@ export default function GameOverSolo(props: {resetStates: any}) {
                   return(
                     <li key={index}>
                       <div className={`results-box ${(index === 0 || score.score === isGameTied) ? 'winner' : ''}`}>
-                        <span>{`Player ${score.player} ${(index === 0 || score.score === isGameTied) ? '(Winner)' : ''}`}</span>
+                        <span>{`Player ${score.player} ${(index === 0 || score.score === isGameTied) ? '(Winner!)' : ''}`}</span>
                         <h3>{`${score.score} ${score.score === 1 ? 'Pair' : 'Pairs'}`}</h3>
                       </div>
                     </li>
