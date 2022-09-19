@@ -88,12 +88,13 @@ export default function Grid() {
           dispatch(addMatchedTiles(indices[1]));
           // Increments score
           dispatch(incrementScore(currentPlayer));
+        } else {
+          // Changes player's turn
+          dispatch(nextPlayer(players));
         }
         // Reset play states
         dispatch(resetIndices());
         dispatch(resetTiles());
-        // Changes player's turn
-        dispatch(nextPlayer(players));
       }, 3000);
     }
      // eslint-disable-next-line
