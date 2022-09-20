@@ -46,4 +46,20 @@
       }
     }
   }
+
+  // Tablet breakpoint
+  @media screen and (max-width: 768px) {
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    div {
+      width: 35%;
+
+      button {
+        width: 45%;
+        margin-left: 2%;
+      }
+    }
+  }
 }
