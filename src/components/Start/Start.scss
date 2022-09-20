@@ -88,6 +88,13 @@
     }
   }
 
+  // Tablet breakpoint
+  @media screen and (max-width: 768px) {
+    .game-settings {
+      width: 90%;
+    }
+  }
+
   // Mobile breakpoint
   @media screen and (max-width: 425px) {
     .game-settings {
