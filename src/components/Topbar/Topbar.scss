@@ -25,6 +25,12 @@
       }
     }
 
+    .menu-button {
+      background-color: $main-button-color;
+      color: $grid-bg-color;
+      display: none;
+    }
+
     .restart-button {
       background-color: $main-button-color;
       color: $grid-bg-color;
