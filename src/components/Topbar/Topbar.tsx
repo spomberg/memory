@@ -16,6 +16,12 @@ export default function Topbar(props: {resetStates: any}) {
       <h1>memory</h1>
       <div>
         <button
+          className='menu-button'
+          onClick={() => console.log('clicked')}
+        >
+          Menu
+        </button>
+        <button
           className='restart-button'
           onClick={() => {
             props.resetStates();
