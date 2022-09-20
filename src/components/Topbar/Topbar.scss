@@ -62,4 +62,27 @@
       }
     }
   }
+
+  // Mobile breakpoint
+  @media screen and (max-width: 425px) {
+    padding-left: 3%;
+    padding-right: 3%;
+    
+    div {
+      justify-content: flex-end;
+
+      .menu-button {
+        display: block;
+        font-size: small;
+      }
+  
+      .restart-button {
+        display: none;
+      }
+  
+      .new-game-button {
+        display: none;
+      }
+    }
+  }
 }
