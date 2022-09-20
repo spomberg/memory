@@ -87,4 +87,23 @@
       }
     }
   }
+
+  // Mobile breakpoint
+  @media screen and (max-width: 425px) {
+    .game-settings {
+      width: 90%;
+      padding: 7%;
+      padding-bottom: 2%;
+      font-size: large;
+
+      button {
+        margin-top: 3%;
+      }
+
+      .start-button {
+        margin-top: 4%;
+        height: 70%;
+      }
+    }
+  }
 }
