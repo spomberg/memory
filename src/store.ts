@@ -13,6 +13,7 @@ import indicesReducer from "./features/indices/indicesSlice";
 import timerReducer from "./features/timer/timerSlice";
 import showStartReducer from "./features/showStart/showStartSlice";
 import showGridReducer from "./features/showGrid/showGridSlice";
+import showMenuReducer from "./features/showMenu/showMenuSlice";
 
 export const store = configureStore({
   reducer : {
@@ -29,7 +30,8 @@ export const store = configureStore({
     indices: indicesReducer,
     timer: timerReducer,
     showStart: showStartReducer,
-    showGrid: showGridReducer
+    showGrid: showGridReducer,
+    showMenu: showMenuReducer
   }
 });
 
