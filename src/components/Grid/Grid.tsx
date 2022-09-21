@@ -19,6 +19,7 @@ import { setTimer } from '../../features/timer/timerSlice';
 import { resetPlayer } from '../../features/currentPlayer/currentPlayerSlice';
 import GameOver from '../GameOver/GameOver';
 import { showGrid } from '../../features/showGrid/showGridSlice';
+import Menu from '../Menu/Menu';
 
 export default function Grid() {
   const dispatch = useAppDispatch();
@@ -112,6 +113,7 @@ export default function Grid() {
   return (
     <>
       <Topbar resetStates={resetStates}/>
+      <Menu resetStates={resetStates} />
       <ul className={`grid ${gridSize === 16 ? 'four-by-four' : 'six-by-six'}`}>
         {grid.map((tile: any, index: number) => {
           return (
