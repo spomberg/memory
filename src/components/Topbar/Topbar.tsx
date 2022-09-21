@@ -70,6 +70,23 @@ export default function Topbar(props: {resetStates: any}) {
           >
             Restart
           </Button>
+          <Button 
+            className='new-game-button'
+            onClick={() => {
+              props.resetStates();
+              dispatch(hideGrid());
+              setTimeout(() => {
+                dispatch(resetGrid());
+                dispatch(abortGame());
+              }, 300);
+          }}>
+            New Game
+          </Button>
+          <Button 
+            className='resume-game-button'
+            onClick={() => setShow(false)}>
+            Resume Game
+          </Button>
         </Modal.Body>
       </Modal>
     </div>
