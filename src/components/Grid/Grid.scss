@@ -97,4 +97,16 @@
       }
     }
   }
+
+  // Mobile breakpoint
+  @media screen and (max-width: 425px) {
+    padding: 5%;
+    margin-top: 20%;
+
+    li {
+      button {
+        font-size: 3rem;
+      }
+    }
+  }
 }
