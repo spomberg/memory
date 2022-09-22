@@ -19,6 +19,7 @@ import { setTimer } from '../../features/timer/timerSlice';
 import { resetPlayer } from '../../features/currentPlayer/currentPlayerSlice';
 import GameOver from '../GameOver/GameOver';
 import { showGrid } from '../../features/showGrid/showGridSlice';
+import { hideMenu } from '../../features/showMenu/showMenuSlice';
 import Menu from '../Menu/Menu';
 
 export default function Grid() {
@@ -36,6 +37,7 @@ export default function Grid() {
   // Resets states
   const resetStates = () => {
     dispatch(resetPlayer());
+    dispatch(hideMenu());
     dispatch(resetMoves());
     dispatch(resetMatchedTiles());
     dispatch(resetTiles());
