@@ -1,5 +1,5 @@
+import './Menu.scss';
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 import { hideMenu } from '../../features/showMenu/showMenuSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { setGrid, resetGrid } from '../../features/grid/gridSlice';
@@ -14,10 +14,10 @@ export default function Menu(props: {resetStates: any}) {
   const gridSize = useAppSelector((state) => state.gridSize.value);
 
   return (
-    <div className="menu">
-      <Modal show={show} onHide={() => dispatch(hideMenu())}>
+    <>
+      <Modal className='menu' show={show} onHide={() => dispatch(hideMenu())}>
         <Modal.Body>
-          <Button 
+          <button
             className='restart-button'
             onClick={() => {
               props.resetStates();
@@ -31,8 +31,8 @@ export default function Menu(props: {resetStates: any}) {
             }}
           >
             Restart
-          </Button>
-          <Button 
+          </button>
+          <button 
             className='new-game-button'
             onClick={() => {
               props.resetStates();
@@ -43,14 +43,14 @@ export default function Menu(props: {resetStates: any}) {
               }, 300);
           }}>
             New Game
-          </Button>
-          <Button 
+          </button>
+          <button 
             className='resume-game-button'
             onClick={() => dispatch(hideMenu())}>
             Resume Game
-          </Button>
+          </button>
         </Modal.Body>
       </Modal>
-    </div>
+    </>
   )
 }
