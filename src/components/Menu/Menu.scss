@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+
+.menu {
+  font-family: 'AtkinsonHyperlegible';
+  margin-top: 50%;
+  width: 90%;
+  margin-left: 5%;
+
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+
+    button {
+      margin-bottom: 4%;
+      border-radius: 25px;
+      background-color: $idle-button-color;
+      border-style: none;
+      color: $start-bg-color;
+      padding: 5%;
+      font-size: large;
+    }
+
+    .restart-button {
+      background-color: $main-button-color;
+      color: $grid-bg-color;
+    }
+  }
+}
