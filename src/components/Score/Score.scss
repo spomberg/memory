@@ -22,6 +22,10 @@
     background-color: $idle-button-color;
     border-radius: 5px;
 
+    .player-mobile {
+      display: none;
+    }
+
     span {
       color: $font-color;
     }
@@ -84,6 +88,31 @@
             span {
               color: $grid-bg-color;
             }
+          }
+        }
+      }
+    }
+  }
+
+  // Mobile breakpoint
+  @media screen and (max-width: 425px) {
+    .score-box {
+      flex-direction: column;
+
+      .player-desktop {
+        display: none;
+      }
+      
+      .player-mobile {
+        display: block;
+      }
+    }
+
+    &.multiplayer {
+      ul {
+        li {
+          .current-turn {
+            display: none;
           }
         }
       }
