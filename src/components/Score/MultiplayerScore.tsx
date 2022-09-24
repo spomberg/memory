@@ -16,7 +16,8 @@ export default function MultiplayerScore() {
             <li key={index}>
               <div className={`triangle ${currentPlayer === index ? 'show' : ''}`}></div>
               <div className={`score-box ${currentPlayer === index ? 'current-player' : ''}`}>
-                <span>Player {index + 1}</span>
+                <span className='player-desktop'>Player {index + 1}</span>
+                <span className='player-mobile'>P{index + 1}</span>
                 <h3>{score[index]}</h3>
               </div>
               {currentPlayer === index && <span className='current-turn'>CURRENT TURN</span>}
