@@ -5,7 +5,6 @@
   flex-direction: row;
   font-family: 'AtkinsonHyperlegible';
   width: 50%;
-  margin-left: 25%;
   justify-content: center;
 
   .score-box {
@@ -43,7 +42,6 @@
       display: flex;
       justify-content: center;
       width: 100%;
-      justify-content: space-evenly;
       
       li {
         display: flex;
@@ -98,6 +96,7 @@
   @media screen and (max-width: 425px) {
     .score-box {
       flex-direction: column;
+      padding: 5%;
 
       .player-desktop {
         display: none;
@@ -105,20 +104,34 @@
       
       .player-mobile {
         display: block;
+        margin-top: 10%;
       }
     }
 
     &.multiplayer {
+      width: 95%;
+      margin: 0;
+      padding: 0;
+      
       ul {
+        margin: 0;
+        padding: 0;
+        margin-left: 2.5%;
+        
         li {
+          margin-top: 5%;
           .current-turn {
             display: none;
           }
-
+          
           .triangle {
             border-left: 10px solid transparent;
             border-right: 10px solid transparent;
             border-bottom: 10px solid $main-button-color;
+          }
+
+          .score-box {
+            width: 70%;
           }
         }
       }
