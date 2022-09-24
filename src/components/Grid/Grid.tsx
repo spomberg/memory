@@ -84,21 +84,24 @@ export default function Grid() {
     if (indices.length > 1) {
       // Increment move counter
       dispatch(incrementMoves());
-      setTimeout(() => {
-        if (tiles[0] === tiles[1]) {
-          // Adds matched tiles to matched array
-          dispatch(addMatchedTiles(indices[0]));
-          dispatch(addMatchedTiles(indices[1]));
-          // Increments score
-          dispatch(incrementScore(currentPlayer));
-        } else {
-          // Changes player's turn
-          dispatch(nextPlayer(players));
-        }
-        // Reset play states
+      if (tiles[0] === tiles[1]) {
+        // Adds matched tiles to matched array
+        dispatch(addMatchedTiles(indices[0]));
+        dispatch(addMatchedTiles(indices[1]));
+        // Increments score
+        dispatch(incrementScore(currentPlayer));
+        // Resets play states
         dispatch(resetIndices());
         dispatch(resetTiles());
-      }, 3000);
+      } else {
+          setTimeout(() => {
+            // Changes player's turn
+            dispatch(nextPlayer(players));
+            // Resets play states
+            dispatch(resetIndices());
+            dispatch(resetTiles());
+          }, 3000);
+        }
     }
      // eslint-disable-next-line
   }, [indices, tiles, dispatch, players])
