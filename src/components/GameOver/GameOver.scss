@@ -85,7 +85,7 @@
 
   // Mobile breakpoint
   @media screen and (max-width: 425px) {
-    margin-top: 30%;
+    margin-top: 20%;
     width: 95%;
     margin-left: 2.5%;
 
@@ -98,6 +98,21 @@
         h3 {
           margin-top: 3%;
         }
+      }
+    }
+
+    .modal-footer {
+      flex-direction: column;
+
+      button {
+        width: 100%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        font-size: 1.3rem;
+      }
+
+      .restart-button {
+        margin-bottom: 4%;
       }
     }
   }
