@@ -48,7 +48,7 @@ export default function GameOverSolo(props: {resetStates: any}) {
               </div>
               <div className='results-box'>
                 <span>Moves Taken</span>
-                <h3>{moves}</h3>
+                <h3>{`${moves} Moves`}</h3>
               </div>
             </Modal.Body>
           </>
