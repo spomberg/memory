@@ -102,9 +102,14 @@
 
   // Mobile breakpoint
   @media screen and (max-width: 425px) {
+    margin-top: 10%;
+
     .score-box {
       flex-direction: column;
-      padding: 5%;
+      padding: 2%;
+      padding-left: 35%;
+      padding-right: 35%;
+      max-width: 100%;
 
       .player-desktop {
         display: none;
@@ -114,6 +119,10 @@
         display: block;
         margin-top: 10%;
       }
+
+      &.time {
+        margin-right: 15%;
+      };
     }
 
     &.multiplayer {
