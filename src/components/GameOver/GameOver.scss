@@ -82,4 +82,23 @@
       color: $selected-button-color;
     }
   }
+
+  // Mobile breakpoint
+  @media screen and (max-width: 425px) {
+    margin-top: 30%;
+    width: 95%;
+    margin-left: 2.5%;
+
+    .modal-body {
+      .results-box {
+        padding: 2%;
+        padding-left: 5%;
+        padding-right: 5%;
+
+        h3 {
+          margin-top: 3%;
+        }
+      }
+    }
+  }
 }
