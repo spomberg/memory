@@ -7,11 +7,11 @@ export default function SoloScore() {
 
   return (
     <div className='score'>
-      <div className='score-box'>
+      <div className='score-box time'>
         <span>Time</span>
         <h3>{time}</h3>
       </div>
-      <div className='score-box'>
+      <div className='score-box moves'>
         <span>Moves</span>
         <h3>{moves}</h3>
       </div>
