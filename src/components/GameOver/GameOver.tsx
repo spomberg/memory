@@ -34,7 +34,7 @@ export default function GameOverSolo(props: {resetStates: any}) {
   
   return (
     <>
-      <Modal className='game-over' show={show}>
+      <Modal className={`game-over ${players !== 1 ? 'multiplayer' : ''}`} show={show}>
         {(players === 1 && state === 'resultsPage') && (
           <>
             <Modal.Header>
