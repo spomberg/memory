@@ -89,6 +89,31 @@
     width: 95%;
     margin-left: 2.5%;
 
+    &.multiplayer {
+      margin-top: 10%;
+      
+      .modal-content {
+        padding: 1%;
+        padding-bottom: 2%;
+      }
+
+      .modal-header {
+        margin-top: 2%;
+        padding-bottom: 1%;
+
+        .modal-title {
+          font-size: x-large;
+        }
+      }
+
+      .modal-body {
+        .results-box {
+          width: 95%;
+          margin-left: 2.5%;
+        }
+      }
+    }
+
     .modal-body {
       .results-box {
         padding: 2%;
