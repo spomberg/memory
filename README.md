@@ -1,46 +1,74 @@
-# Getting Started with Create React App
+# Password Generator App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Password generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/memory-game-vse4WFPvM). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Available Scripts
+This project was built with React.js, TypeScript, Sass and tested with Jest, and it's hosted [here](https://memory.spomberg.com).
 
-In the project directory, you can run:
+## Table of contents
 
-### `npm start`
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+- [Built with](#built-with)
+- [What I learned](#what-i-learned)
+  - [Work with detailed wireframes](#work-with-detailed-wireframes)
+  - [Test Driven development practice](#test-driven-development-practice)
+  - [React Redux](#react-redux)
+  - [Recursion](#recursion)
+- [Author](#author)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Overview
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Memory is a responsive single-page site built with React. Users are able to:
 
-### `npm test`
+- Play the Memory game either solo or multiplayer (up to 4 players)
+- Set the theme to use numbers or icons within the tiles
+- Choose to play on either a 6x6 or 4x4 grid- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### The challenge
 
-### `npm run build`
+The challenge was to create the app based solely on the user stories above and the design files provided. I was free to use any framework and language I wished and no code was given to start with.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The image below is the provided preview of what the app was supposed to look like:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![preview](https://raw.githubusercontent.com/spomberg/memory/9f9b90e2df2bf52602dae5c146350a3d7298fe71/src/assets/images/preview.jpg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Screenshots
 
-### `npm run eject`
+And these are gifs showing the final product in action:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Desktop
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![desktop-demo](https://raw.githubusercontent.com/spomberg/memory/ed26d7d885dccca30a710f93f52febce6e1b4da8/src/assets/images/memory-desktop-demo.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Mobile
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![mobile-demo](https://raw.githubusercontent.com/spomberg/memory/0335a8b2b6fba3446cbae4ef3df26b91651e96f7/src/assets/images/memory-mobile-demo.gif)
 
-## Learn More
+## Built with
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- React
+- TypeScript
+- Sass
+- Bootstrap
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Dependencies
+
+- React Redux
+- React Bootstrap
+- React Copy to Clipboard
+- React SVG
+- React Timer Hook
+- Jest
+
+## What I learned
+
+### Work with detailed wireframes
+
+This challenge allowed me flex my frontend skills, I was able to bring industry-level designs to life, I'm most proud of how close the final product is to the wireframes provided.
+
+## Author
+
+- Portfolio - [spomberg.com](https://spomberg.com)
+- LinkedIn - [/marcos-spomberg](https://www.linkedin.com/in/marcos-spomberg/)
