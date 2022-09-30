@@ -1,6 +1,6 @@
-# Memory
+# Memory Game
 
-This is a solution to the [Memory challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/memory-game-vse4WFPvM). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Memory game challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/memory-game-vse4WFPvM). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 This project was built with React.js, TypeScript, Sass and tested with Jest, and it's hosted [here](https://memory.spomberg.com).
 
@@ -8,13 +8,10 @@ This project was built with React.js, TypeScript, Sass and tested with Jest, and
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshots)
 - [Built with](#built-with)
 - [What I learned](#what-i-learned)
   - [Work with detailed wireframes](#work-with-detailed-wireframes)
-  - [Test Driven development practice](#test-driven-development-practice)
-  - [React Redux](#react-redux)
-  - [Recursion](#recursion)
 - [Author](#author)
 
 ## Overview
