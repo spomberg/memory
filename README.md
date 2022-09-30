@@ -57,7 +57,7 @@ Game Over
 
 Start Page
 
-![mobile-start-page](https://github.com/spomberg/memory/blob/main/src/assets/images/memory-mobile-start-page.png?raw=true)
+![mobile-start-page](https://raw.githubusercontent.com/spomberg/memory/1aee21dcd24f0da5694f0bcd0bfb0f10db700188/src/assets/images/memory-mobile-start-page.png)
 
 4x4 Grid
 
