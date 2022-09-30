@@ -1,6 +1,6 @@
-# Password Generator App
+# Memory
 
-This is a solution to the [Password generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/memory-game-vse4WFPvM). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Memory challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/memory-game-vse4WFPvM). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 This project was built with React.js, TypeScript, Sass and tested with Jest, and it's hosted [here](https://memory.spomberg.com).
 
@@ -41,6 +41,10 @@ And these are gifs showing the final product in action:
 Desktop
 
 ![desktop-demo](https://raw.githubusercontent.com/spomberg/memory/ed26d7d885dccca30a710f93f52febce6e1b4da8/src/assets/images/memory-desktop-demo.gif)
+
+Start Page
+
+![desktop-start-page](https://raw.githubusercontent.com/spomberg/memory/ed26d7d885dccca30a710f93f52febce6e1b4da8/src/assets/images/memory-desktop-demo.gif)
 
 Mobile
 
