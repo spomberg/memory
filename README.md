@@ -104,7 +104,7 @@ Up until now I had only programmed in JavaScript and Ruby and I had set a goal o
 
 ### Tackle an advanced project
 
-This is the second Frontend Mentor challenge I complete. Since I recently graduated from a coding bootcamp, I decided to complete an [intermediate level project first](https://github.com/spomberg/password-generator-app), which gave me enough confidence to take on an advanced project this time. Considering that I'm still a junior developer, it was a great accomplishment to get to complete this one as well. 
+This is the second Frontend Mentor challenge I complete. Since I recently graduated from a coding bootcamp, I decided to complete an [intermediate level project first](https://github.com/spomberg/password-generator-app), which gave me enough confidence to take on an advanced project this time. Considering that I'm still a junior developer, it was a great accomplishment to complete this one. 
 
 ### Handle multiple states at the same time
 
