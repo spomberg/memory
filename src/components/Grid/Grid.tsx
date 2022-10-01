@@ -93,7 +93,7 @@ export default function Grid() {
         // Resets play states
         dispatch(resetIndices());
         dispatch(resetTiles());
-      } else { // If tiles are different
+      } else { // If tiles are different:
           setTimeout(() => {
             // Changes player's turn
             dispatch(nextPlayer(players));
