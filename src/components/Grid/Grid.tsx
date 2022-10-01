@@ -84,7 +84,7 @@ export default function Grid() {
     if (indices.length > 1) {
       // Increment move counter
       dispatch(incrementMoves());
-      if (tiles[0] === tiles[1]) {
+      if (tiles[0] === tiles[1]) { // If tiles are identical:
         // Adds matched tiles to matched array
         dispatch(addMatchedTiles(indices[0]));
         dispatch(addMatchedTiles(indices[1]));
@@ -93,7 +93,7 @@ export default function Grid() {
         // Resets play states
         dispatch(resetIndices());
         dispatch(resetTiles());
-      } else {
+      } else { // If tiles are different
           setTimeout(() => {
             // Changes player's turn
             dispatch(nextPlayer(players));
