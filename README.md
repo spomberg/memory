@@ -12,8 +12,10 @@ This project was built with React.js, TypeScript, Sass and tested with Jest, and
 - [Built with](#built-with)
 - [What I learned](#what-i-learned)
   - [Work with detailed wireframes](#work-with-detailed-wireframes)
-  - [Handling multiple states at the same time](#handling-multiple-states-at-the-same-time)
+  - [Handle multiple states at the same time](#handle-multiple-states-at-the-same-time)
+  - [Tackle an advanced project](#tackle-an-advanced-project)
 - [Author](#author)
+  - [Other projects](#other-projects)
 
 ## Overview
 
@@ -95,7 +97,11 @@ Game Over
 
 This challenge allowed me flex my frontend skills, I was able to bring industry-level designs to life, I'm proud of how close the final product is to the wireframes provided.
 
-### Handling multiple states at the same time
+### Tackle an advanced project
+
+This is the second Frontend Mentor challenge I complete. Since I recently graduated from a coding bootcamp, I decided to complete an [intermediate level project first](https://github.com/spomberg/password-generator-app), which gave me enough confidence to take on an advanced project this time. Considering that I'm still a junior developer, it was a great accomplishment to get to complete this one as well. 
+
+### Handle multiple states at the same time
 
 Since this is a game that can be played with several different settings, I had to juggle over a dozen states that affected several parts of the app such as the outcome of each play, the grid, score, game over screen, etc... 
 
@@ -133,3 +139,8 @@ To make all this work I leveraged React Redux in a way I had never done before. 
 
 - Portfolio - [spomberg.com](https://spomberg.com)
 - LinkedIn - [/marcos-spomberg](https://www.linkedin.com/in/marcos-spomberg/)
+
+### Other projects
+
+- My Movie List - [Site](https://mymovielist.ca) / [Repo](https://github.com/spomberg/my-movie-list)
+- Password Generator App - [Site](https://password-generator.spomberg.com) / [Repo](https://github.com/spomberg/password-generator-app)
