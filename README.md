@@ -12,6 +12,7 @@ This project was built with React.js, TypeScript, Sass and tested with Jest, and
 - [Built with](#built-with)
 - [What I learned](#what-i-learned)
   - [Work with detailed wireframes](#work-with-detailed-wireframes)
+  - [Handling multiple states at the same time](#handling-multiple-states-at-the-same-time)
 - [Author](#author)
 
 ## Overview
@@ -92,7 +93,41 @@ Game Over
 
 ### Work with detailed wireframes
 
-This challenge allowed me flex my frontend skills, I was able to bring industry-level designs to life, I'm most proud of how close the final product is to the wireframes provided.
+This challenge allowed me flex my frontend skills, I was able to bring industry-level designs to life, I'm proud of how close the final product is to the wireframes provided.
+
+### Handling multiple states at the same time
+
+Since this is a game that can be played with several different settings, I had to juggle over a dozen states that affected several parts of the app such as the outcome of each play, the grid, score, game over screen, etc... 
+
+To make all this work I leveraged React Redux in a way I had never done before. The piece of code that I'm most proud of is the following which basically handles each play.
+
+```js
+// Handles the play, called everytime a tile is clicked.
+  useEffect(() => {
+    if (indices.length > 1) { // If this is the second tile clicked:
+      // Increment move counter
+      dispatch(incrementMoves());
+      if (tiles[0] === tiles[1]) { // If tiles are identical:
+        // Adds matched tiles to matched array
+        dispatch(addMatchedTiles(indices[0]));
+        dispatch(addMatchedTiles(indices[1]));
+        // Increments score
+        dispatch(incrementScore(currentPlayer));
+        // Resets play states
+        dispatch(resetIndices());
+        dispatch(resetTiles());
+      } else { // If tiles are different:
+          setTimeout(() => {
+            // Changes player's turn
+            dispatch(nextPlayer(players));
+            // Resets play states
+            dispatch(resetIndices());
+            dispatch(resetTiles());
+          }, 3000);
+        }
+    }
+  }, [indices, tiles, dispatch, players])
+```
 
 ## Author
 
