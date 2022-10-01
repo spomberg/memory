@@ -57,19 +57,20 @@ Game Over
 
 Start Page
 
-![mobile-start-page](https://raw.githubusercontent.com/spomberg/memory/1aee21dcd24f0da5694f0bcd0bfb0f10db700188/src/assets/images/memory-mobile-start-page.png)
+<img src="https://raw.githubusercontent.com/spomberg/memory/1aee21dcd24f0da5694f0bcd0bfb0f10db700188/src/assets/images/memory-mobile-start-page.png" width="300" height="500" />
 
 4x4 Grid
 
-![mobile-4x4-grid](https://github.com/spomberg/memory/blob/main/src/assets/images/memory-mobile-4x4.png?raw=true)
+<img src="https://github.com/spomberg/memory/blob/main/src/assets/images/memory-mobile-4x4.png?raw=true" width="300" height="500" />
+
 
 6x6 Grid
 
-![mobile-6x6-grid](https://github.com/spomberg/memory/blob/main/src/assets/images/memory-desktop-6x6.png?raw=true)
+<img src="https://github.com/spomberg/memory/blob/main/src/assets/images/memory-mobile-6x6.png?raw=true" width="300" height="500" />
 
 Game Over
 
-![mobile-game-over](https://github.com/spomberg/memory/blob/main/src/assets/images/memory-mobile-game-over.png?raw=true)
+<img src="https://github.com/spomberg/memory/blob/main/src/assets/images/memory-mobile-game-over.png?raw=true" width="300" height="500" />
 
 ## Built with
 
