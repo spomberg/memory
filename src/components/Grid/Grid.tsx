@@ -81,7 +81,7 @@ export default function Grid() {
 
   // Handles the play, called everytime a tile is clicked.
   useEffect(() => {
-    if (indices.length > 1) {
+    if (indices.length > 1) { // If this is the second tile clicked:
       // Increment move counter
       dispatch(incrementMoves());
       if (tiles[0] === tiles[1]) { // If tiles are identical:
