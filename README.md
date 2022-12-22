@@ -24,7 +24,7 @@ Memory is a responsive single-page site built with React. Users are able to:
 
 - Play the Memory game either solo or multiplayer (up to 4 players)
 - Set the theme to use numbers or icons within the tiles
-- Choose to play on either a 6x6 or 4x4 grid
+- Choose to play on either a 4x4 or 6x6 grid
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
