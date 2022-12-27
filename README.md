@@ -12,7 +12,7 @@ This project was built with React.js, TypeScript, Sass and tested with Jest, and
 - [Built with](#built-with)
 - [What I learned](#what-i-learned)
   - [Work with detailed wireframes](#work-with-detailed-wireframes)
-  - [Code in TypeScript](#code-in-typescript)
+  - [Program in TypeScript](#program-in-typescript)
   - [Handle multiple states at the same time](#handle-multiple-states-at-the-same-time)
   - [Tackle an advanced project](#tackle-an-advanced-project)
 - [Author](#author)
@@ -99,7 +99,7 @@ Game Over
 
 This challenge allowed me flex my frontend skills, I was able to bring industry-level designs to life, I'm proud of how close the final product is to the wireframes provided.
 
-### Code in TypeScript
+### Program in TypeScript
 
 Up until now I had only programmed in JavaScript and Ruby and I had set a goal of becoming proficient in TypeScript. I not only completed this project using TypeScript but I also had to use the React TypeScript template which added some complexity to a library I used to be comfortable with, not to mention React Redux and other libraries that also work a little differently when used in conjunction with TypeScript. Overall, a lot of documentation reading was done. 
 
