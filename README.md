@@ -99,7 +99,7 @@ Game Over
 
 This challenge allowed me flex my frontend skills, I was able to bring industry-level designs to life, I'm proud of how close the final product is to the wireframes provided.
 
-### Program in TypeScript
+### Code in TypeScript
 
 Up until now I had only programmed in JavaScript and Ruby and I had set a goal of becoming proficient in TypeScript. I not only completed this project using TypeScript but I also had to use the React TypeScript template which added some complexity to a library I used to be comfortable with, not to mention React Redux and other libraries that also work a little differently when used in conjunction with TypeScript. Overall, a lot of documentation reading was done. 
 
